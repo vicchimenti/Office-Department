@@ -257,7 +257,10 @@ try {
      * */
     writeDocument(
         [
+            openGrid,
+            
 
+            closeGrid
         ]
     );
 
