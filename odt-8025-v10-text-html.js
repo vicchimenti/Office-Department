@@ -194,7 +194,7 @@ try {
     /***
      *      Dictionary of content
      * */
-    let fulltextNewsDict = {
+    let officeDict = {
 
         contentName: getContentValues('<t4 type="content" name="Name" output="normal" modifiers="striptags,htmlentities" />'),
         headline: getContentValues('<t4 type="content" name="Title" output="normal" modifiers="striptags,htmlentities" />'),
@@ -221,9 +221,9 @@ try {
      *  prioritize media library image
      * 
      * */
-    let imageString = (fulltextNewsDict.mediaImage.content) ?
-    mediaTag(fulltextNewsDict.mediaImage.content) :
-    externalImageTag(fulltextNewsDict.externalImage.content, fulltextNewsDict.externalImageAlt.content, fulltextNewsDict.contentName.content);
+    let imageString = (officeDict.mediaImage.content) ?
+    mediaTag(officeDict.mediaImage.content) :
+    externalImageTag(officeDict.externalImage.content, officeDict.externalImageAlt.content, officeDict.contentName.content);
 
 
 
@@ -233,8 +233,8 @@ try {
      * 
      * */
 
-    let formattedTopics = (fulltextNewsDict.topics.content) ?
-    processList(fulltextNewsDict.topics.content) :
+    let formattedTopics = (officeDict.topics.content) ?
+    processList(officeDict.topics.content) :
     '<span class="newsroomArticleTopicsHeader d-none hidden visually-hidden">No Valid Topic Provided</span>';
 
 
@@ -247,7 +247,7 @@ try {
     writeDocument(
         [
         articleWrapper,
-        fulltextNewsDict.anchor.content,
+        officeDict.anchor.content,
         openContainer,
         openRow,
         openColMd9,
