@@ -211,3 +211,129 @@ try {
         contentId: getContentValues('<t4 type="meta" meta="content_id" />')
 
     };
+
+    
+    /***
+     *  prioritize media library image
+     * 
+     * */
+    let imageString = (fulltextNewsDict.mediaImage.content) ?
+    mediaTag(fulltextNewsDict.mediaImage.content) :
+    externalImageTag(fulltextNewsDict.externalImage.content, fulltextNewsDict.externalImageAlt.content, fulltextNewsDict.contentName.content);
+
+
+
+
+    /***
+     *  image credits
+     * 
+     * */
+    let imageCreditString = (fulltextNewsDict.imageCredit.content) ?
+    '<div class="newsroomFeaturedImageCredit col-md-3"><p>Image credit: ' + fulltextNewsDict.imageCredit.content + '</p></div>' :
+    '<span class="newsroomFeaturedImageCredit d-none hidden visually-hidden">No Image Credit Provided</span>';
+
+
+
+
+    /***
+     *  image caption
+     * 
+     * */
+    let captionString = (fulltextNewsDict.caption.content) ?
+    '<div class="newsroomFeaturedImageCaption col-md-9">' + fulltextNewsDict.caption.content + '</div>':
+    '<span class="newsroomFeaturedImageCaption d-none hidden visually-hidden">No Caption Provided</span>';
+
+
+
+
+    /***
+     *  article summary
+     * 
+     * */
+    let summaryString = (fulltextNewsDict.articleSetup.content) ?
+    '<h2 class="newsroomArticleLead">' + fulltextNewsDict.articleSetup.content + '</h2>' :
+    (fulltextNewsDict.articleSubhead.content) ?
+    '<h2 class="newsroomArticleLead">' + fulltextNewsDict.articleSubhead.content + '</h2>' :
+    '<span class="newsroomArticleLead d-none hidden visually-hidden">No Article Setup Provided</span>';
+
+
+
+
+    /***
+     *  full story
+     * 
+     * */
+    let fullStoryString = (fulltextNewsDict.fullStory.content) ?
+    '<div class="articleText standardContent"><p>' + fulltextNewsDict.fullStory.content + '</p></div>':
+    '<span class="articleText d-none hidden visually-hidden">No Full Story Provided</span>';
+
+
+
+
+    /***
+     *  process categories
+     * 
+     * */
+
+    let formattedTopics = (fulltextNewsDict.topics.content) ?
+    processList(fulltextNewsDict.topics.content) :
+    '<span class="newsroomArticleTopicsHeader d-none hidden visually-hidden">No Valid Topic Provided</span>';
+
+
+
+
+    
+
+
+
+    /***
+     *  write document once
+     * 
+     * */
+    writeDocument(
+        [
+        articleWrapper,
+        fulltextNewsDict.anchor.content,
+        openContainer,
+        openRow,
+        openColMd9,
+        formattedTopics,
+        titleWrapper,
+        closeColMd9,
+        closeRow,
+        openRow,
+        openByline,
+        byLine,
+        dateString,
+        closeByline,
+        closeRow,
+        closeContainer,
+        openImageWrapper,
+        imageString,
+        openImgAttributes,
+        openRow,
+        imageCreditString,
+        captionString,
+        closeRow,
+        closeImgAttributes,
+        closeImageWrapper,
+        openSummaryContainer,
+        openRow,
+        openColMd3,
+        closeColMd3,
+        openBody,
+        summaryString,
+        fullStoryString,
+        closeBody,
+        closeRow,
+        closeSummaryContainer,
+        closeWrapper
+        ]
+    );
+
+
+
+
+} catch (err) {
+    document.write(err.message);
+}
