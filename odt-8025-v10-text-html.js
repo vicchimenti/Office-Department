@@ -156,7 +156,7 @@ function processList(rawValues) {
     let listItems = assignList(arrayOfTags) || null;
 
     let result = (listItems) ?
-        '<p class="newsroomArticleTopicsHeader">' + listItems + '</p>':
+        '<div class="tags tags__links"><h2 class="tags__heading show-for-sr">Profile Type:</h2><ul>' + listItems + '</ul></h2></div>':
         '<span class="newsroomArticleTopicsHeader d-none hidden visually-hidden">No Valid Topic Provided</span>';
 
     return result;
