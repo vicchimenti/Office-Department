@@ -343,7 +343,9 @@ try {
             openCell4,
             imageString,
             openDetail,
+            openSocial,
 
+            closeSocial,
             closeDetail,
             closeCell4,
             closeGrid
