@@ -324,6 +324,14 @@ try {
         '</a>' +
         '</li>' :
         '<span class="hidden youtubeSocial"></span>';
+    let linkedinString = (socialTrue && officeDict.linkedin.content) ?
+        '<li>' +
+        '<a href="' + officeDict.linkedin.content + '" title="LinkedIn" aria-label="LinkedIn opens in a new tab" target="_blank">' +
+        '<span class="show-for-sr">LinkedIn</span>' +
+        '<span class="fa-brands fa-square-youtube" aria-hidden="true"></span>' +
+        '</a>' +
+        '</li>' :
+        '<span class="hidden linkedinSocial"></span>';
 
         
 
@@ -383,6 +391,7 @@ try {
             tiktokString,
             twitterString,
             youtubeString,
+            linkedinString,
 
             closeSocial,
             closeDetail,
