@@ -269,6 +269,9 @@ try {
             openCell8,
 
             closeCell8,
+            openCell4,
+
+            closeCell4,
 
 
             closeGrid
