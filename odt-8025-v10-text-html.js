@@ -220,6 +220,12 @@ try {
     };
 
 
+
+
+    let openGrid = '<div class="hero--basic global-padding--15x"><div class="grid-container"><div class="grid-x grid-margin-x"></div>';
+    let closeGrid = '</div></div></div>';
+
+
     
 
     /***
