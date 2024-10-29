@@ -254,8 +254,8 @@ try {
      * 
      * */
     let descriptionString = (officeDict.description.content) ?
-    '<div class="wysiwyg"><p>' + officeDict.description.content + '</p></div>' :
-    '<span class="hidden generalDescription"></span>';
+        '<div class="wysiwyg"><p>' + officeDict.description.content + '</p></div>' :
+        '<span class="hidden generalDescription"></span>';
 
 
     
