@@ -278,28 +278,40 @@ try {
      *  Social list
      * 
      * */
-    let socialTrue = (  officeDict.facebook.content       ||
-                        officeDict.linkedin.content       || 
+    let socialTrue = (  officeDict.tiktok.content         ||
                         officeDict.twitter.content        ||
                         officeDict.youtube.content        ||
+                        officeDict.linkedin.content       || 
                         officeDict.instagram.content      ||
-                        officeDict.tiktok.content         ||
+                        officeDict.facebook.content       ||
                         officeDict.threads.content    )   ?
                         true : false;
     let openSocial = (socialTrue) ?
-        '<div class="eyebrow" id="office-title">Contact Information</div><ul class="icon-list" id="office-list">' :
+        '<div class="eyebrow" id="connect">Connect</div><ul class="icon-list social-media btn-row" id="social-media-icons">' :
         '<span class="hidden socialList"></span>';
     let closeSocial = (socialTrue) ?
-        '</ul></div>' :
+        '</ul>' :
         '<span class="hidden socialLinks"></span>';
+    
+
+
+
+    /***
+     *  Social links
+     * 
+     * */
+    let tiktokString = (socialTrue && officeDict.tiktok.content) ?
+        '<li><a href="' + officeDict.tiktok.content + '" title="TikTok" aria-label="Tiktok opens in a new tab" target="_blank"><span class="show-for-sr">Tiktok</span></a>'
+                <a href=&quot;&quot; target=&quot;_blank&quot; aria-label=&quot;Tiktok opens in a new window&quot;>
+                  <span class=&quot;show-for-sr&quot;>Tiktok</span>
+                  <span class=&quot;fa-brands fa-tiktok&quot; aria-hidden=&quot;true&quot;></span>
+                </a>
+              </li>'
+        
 
 
 
 
-        '<div class="global-spacing--3x sr-only>' + officeDict.breadcrumbs.content + '</div>' :
-        (!officeDict.breadcrumbOption.content && officeDict.breadcrumbs.content) ?
-        '<div class="global-spacing--3x>' + officeDict.breadcrumbs.content + '</div>' :
-        '<span class="hidden nobreadcrumbs"></span>';
 
 
     
@@ -324,7 +336,12 @@ try {
         processList(officeDict.officeType.content) :
         '<span class="newsroomArticleTopicsHeader d-none hidden visually-hidden">No Valid Topic Provided</span>';
 
-
+    //     let openSocial = (socialTrue) ?
+    //     '<div class="eyebrow" id="office-title">Contact Information</div><ul class="icon-list" id="office-list">' :
+    //     '<span class="hidden socialList"></span>';
+    // let closeSocial = (socialTrue) ?
+    //     '</ul></div>' :
+    //     '<span class="hidden socialLinks"></span>';
 
 
     /***
@@ -343,6 +360,7 @@ try {
             openCell4,
             imageString,
             openDetail,
+
             openSocial,
 
             closeSocial,
