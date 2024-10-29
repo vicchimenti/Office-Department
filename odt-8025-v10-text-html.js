@@ -273,7 +273,9 @@ try {
             closeCell8,
             openCell4,
 
+            openDetail,
 
+            closeDetail,
             closeCell4,
             closeGrid
         ]
