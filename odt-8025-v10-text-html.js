@@ -198,7 +198,7 @@ try {
 
         contentName: getContentValues('<t4 type="content" name="Name" output="normal" modifiers="striptags,htmlentities" />'),
         officeName: getContentValues('<t4 type="content" name="Office/Dept Name" output="normal" modifiers="striptags,htmlentities" />'),
-        description: getContentValues('<t4 type="content" name="General Description" output="normal" modifiers="striptags,htmlentities,nl2br" />'),
+        description: getContentValues('<t4 type="content" name="General Description" output="normal" modifiers="striptags,htmlentities" />'),
         breadcrumbs: getContentValues('<t4 type="content" name="Hide Breadcrumbs" output="normal" display_field="value" />'),
         schoolsColleges: getContentValues('<t4 type="content" name="Schools & Colleges" output="normal" display_field="value" />'),
         officeType: getContentValues('<t4 type="content" name="Type of Office/Dept" output="normal" display_field="value" />'),
@@ -247,6 +247,17 @@ try {
         '<h1>' + officeDict.contentName.content + '</h1>';
 
 
+
+
+    /***
+     *  Description
+     * 
+     * */
+    let headingString = (officeDict.officeName.content) ?
+    '<h1>' + officeDict.officeName.content + '</h1>' :
+    '<h1>' + officeDict.contentName.content + '</h1>';
+
+
     
 
     /***
@@ -264,7 +275,6 @@ try {
      *  process types
      * 
      * */
-
     let formattedTypes = (officeDict.officeType.content) ?
         processList(officeDict.officeType.content) :
         '<span class="newsroomArticleTopicsHeader d-none hidden visually-hidden">No Valid Topic Provided</span>';
