@@ -236,7 +236,7 @@ try {
     let openDetail = '<div class="office-detail--contact">';
     let closeDetail = '</div>';
 
-// <div class="global-spacing--3x>
+
 
 
     /***
@@ -265,9 +265,24 @@ try {
      *  Breadcrumbs
      * 
      * */
-    let breadcrumbString = (officeDict.description.content) ?
-    '<div class="wysiwyg"><p>' + officeDict.description.content + '</p></div>' :
-    '<span class="hidden generalDescription"></span>';
+    let breadcrumbString = (officeDict.breadcrumbOption.content && officeDict.breadcrumbs.content) ?
+        '<div class="global-spacing--3x sr-only>' + officeDict.breadcrumbs.content + '</div>' :
+        (!officeDict.breadcrumbOption.content && officeDict.breadcrumbs.content) ?
+        '<div class="global-spacing--3x>' + officeDict.breadcrumbs.content + '</div>' :
+        '<span class="hidden nobreadcrumbs"></span>';
+
+
+
+
+    /***
+     *  Social Tags
+     * 
+     * */
+    let socialString = (officeDict.breadcrumbOption.content && officeDict.breadcrumbs.content) ?
+        '<div class="global-spacing--3x sr-only>' + officeDict.breadcrumbs.content + '</div>' :
+        (!officeDict.breadcrumbOption.content && officeDict.breadcrumbs.content) ?
+        '<div class="global-spacing--3x>' + officeDict.breadcrumbs.content + '</div>' :
+        '<span class="hidden nobreadcrumbs"></span>';
 
 
     
@@ -307,12 +322,11 @@ try {
             formattedTypes,
             descriptionString,
             breadcrumbString,
-
             closeCell8,
             openCell4,
             imageString,
             openDetail,
-
+            socialString,
             closeDetail,
             closeCell4,
             closeGrid
