@@ -400,6 +400,7 @@ try {
             twitterString,
             youtubeString,
             linkedinString,
+            instagramString,
 
             closeSocial,
             closeDetail,
