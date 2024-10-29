@@ -336,7 +336,7 @@ try {
         '<li>' +
         '<a href="' + officeDict.instagram.content + '" title="Instagram" aria-label="Instagram opens in a new tab" target="_blank">' +
         '<span class="show-for-sr">Instagram</span>' +
-        '<span class="fa-brands fa-square-youtube" aria-hidden="true"></span>' +
+        '<span class="fa-brands fa-square-instagram" aria-hidden="true"></span>' +
         '</a>' +
         '</li>' :
         '<span class="hidden instagramSocial"></span>';
