@@ -202,6 +202,7 @@ try {
         breadcrumbs: getContentValues('<t4 type="content" name="Hide Breadcrumbs" output="normal" display_field="value" />'),
         schoolsColleges: getContentValues('<t4 type="content" name="Schools & Colleges" output="normal" display_field="value" />'),
         officeType: getContentValues('<t4 type="content" name="Type of Office/Dept" output="normal" display_field="value" />'),
+        mediaImage: getContentValues('<t4 type="content" name="Office/Dept Image" output="normal" formatter="path/*" />'),
 
 
 
