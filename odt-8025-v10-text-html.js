@@ -152,8 +152,8 @@ function assignList(arrayOfValues) {
  */
 function processList(rawValues) {
 
-    let arrayOfTops = rawValues.split(',');
-    let listItems = assignList(arrayOfTops) || null;
+    let arrayOfTags = rawValues.split(',');
+    let listItems = assignList(arrayOfTags) || null;
 
     let result = (listItems) ?
         '<p class="newsroomArticleTopicsHeader">' + listItems + '</p>':
