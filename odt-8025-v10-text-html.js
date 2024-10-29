@@ -301,12 +301,15 @@ try {
      * 
      * */
     let tiktokString = (socialTrue && officeDict.tiktok.content) ?
-        '<li><a href="' + officeDict.tiktok.content + '" title="TikTok" aria-label="Tiktok opens in a new tab" target="_blank"><span class="show-for-sr">Tiktok</span></a>'
-                <a href=&quot;&quot; target=&quot;_blank&quot; aria-label=&quot;Tiktok opens in a new window&quot;>
-                  <span class=&quot;show-for-sr&quot;>Tiktok</span>
-                  <span class=&quot;fa-brands fa-tiktok&quot; aria-hidden=&quot;true&quot;></span>
-                </a>
-              </li>'
+        '<li>' +
+        '<a href="' + officeDict.tiktok.content + '" title="TikTok" aria-label="Tiktok opens in a new tab" target="_blank">' +
+        '<span class="show-for-sr">Tiktok</span>' +
+        '<span class="fa-brands fa-tiktok" aria-hidden="true"></span>' +
+        '</a>' +
+        '</li>' :
+        '<span class="hidden tiktokSocial"></span>';
+
+
         
 
 
