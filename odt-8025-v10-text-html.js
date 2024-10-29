@@ -275,7 +275,7 @@ try {
 
 
     /***
-     *  Social bool
+     *  Social list
      * 
      * */
     let socialTrue = (  officeDict.facebook.content       ||
