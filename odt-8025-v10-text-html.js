@@ -230,6 +230,8 @@ try {
     let closeGrid = '</div></div></div>';
     let openCell8 = '<div class="cell medium-8"><div class="hero--basic__text hero--profile__text text-margin-reset">';
     let closeCell8 = '</div></div>';
+    let openCell4 = '<aside class="cell medium-4">';
+    let closeCell4 = '</aside>';
 
 
     
