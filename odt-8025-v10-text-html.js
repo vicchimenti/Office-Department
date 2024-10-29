@@ -340,6 +340,14 @@ try {
         '</a>' +
         '</li>' :
         '<span class="hidden instagramSocial"></span>';
+    let facebookString = (socialTrue && officeDict.facebook.content) ?
+        '<li>' +
+        '<a href="' + officeDict.facebook.content + '" title="Facebook" aria-label="Facebook opens in a new tab" target="_blank">' +
+        '<span class="show-for-sr">Facebook</span>' +
+        '<span class="fa-brands fa-square-threads" aria-hidden="true"></span>' +
+        '</a>' +
+        '</li>' :
+        '<span class="hidden facebookSocial"></span>';
     let threadsString = (socialTrue && officeDict.threads.content) ?
         '<li>' +
         '<a href="' + officeDict.threads.content + '" title="Threads" aria-label="Threads opens in a new tab" target="_blank">' +
@@ -348,7 +356,6 @@ try {
         '</a>' +
         '</li>' :
         '<span class="hidden threadsSocial"></span>';
-
         
 
 
@@ -408,7 +415,7 @@ try {
             youtubeString,
             linkedinString,
             instagramString,
-
+            facebookString,
             threadsString,
             closeSocial,
             closeDetail,
