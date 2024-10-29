@@ -373,6 +373,8 @@ try {
             openDetail,
 
             openSocial,
+            tiktokString,
+            twitterString,
 
             closeSocial,
             closeDetail,
