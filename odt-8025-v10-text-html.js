@@ -275,10 +275,20 @@ try {
 
 
     /***
-     *  Social Tags
+     *  Social bool
      * 
      * */
-    let socialString = (officeDict.breadcrumbOption.content && officeDict.breadcrumbs.content) ?
+    let socialTrue = (  officeDict.facebook.content       ||
+                        officeDict.linkedin.content       || 
+                        officeDict.twitter.content        ||
+                        officeDict.youtube.content        ||
+                        officeDict.instagram.content      ||
+                        officeDict.tiktok.content         ||
+                        officeDict.threads.content    )   ?
+                        true : false;
+    let openSocial = (socialTrue) ?
+        '<div class="eyebrow" id="office-title">Contact Information</div><ul class="icon-list" id="office-list">' :
+        '<span class="hidden socialList"></span>';
         '<div class="global-spacing--3x sr-only>' + officeDict.breadcrumbs.content + '</div>' :
         (!officeDict.breadcrumbOption.content && officeDict.breadcrumbs.content) ?
         '<div class="global-spacing--3x>' + officeDict.breadcrumbs.content + '</div>' :
@@ -326,7 +336,7 @@ try {
             openCell4,
             imageString,
             openDetail,
-            socialString,
+
             closeDetail,
             closeCell4,
             closeGrid
