@@ -289,6 +289,13 @@ try {
     let openSocial = (socialTrue) ?
         '<div class="eyebrow" id="office-title">Contact Information</div><ul class="icon-list" id="office-list">' :
         '<span class="hidden socialList"></span>';
+    let closeSocial = (socialTrue) ?
+        '</ul></div>' :
+        '<span class="hidden socialLinks"></span>';
+
+
+
+
         '<div class="global-spacing--3x sr-only>' + officeDict.breadcrumbs.content + '</div>' :
         (!officeDict.breadcrumbOption.content && officeDict.breadcrumbs.content) ?
         '<div class="global-spacing--3x>' + officeDict.breadcrumbs.content + '</div>' :
