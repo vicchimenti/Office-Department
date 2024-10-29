@@ -236,7 +236,7 @@ try {
     let openDetail = '<div class="office-detail--contact">';
     let closeDetail = '</div>';
 
-
+// <div class="global-spacing--3x>
 
 
     /***
@@ -257,9 +257,21 @@ try {
     let descriptionString = (officeDict.description.content) ?
         '<div class="wysiwyg"><p>' + officeDict.description.content + '</p></div>' :
         '<span class="hidden generalDescription"></span>';
+    
+
+
+
+    /***
+     *  Breadcrumbs
+     * 
+     * */
+    let breadcrumbString = (officeDict.description.content) ?
+    '<div class="wysiwyg"><p>' + officeDict.description.content + '</p></div>' :
+    '<span class="hidden generalDescription"></span>';
 
 
     
+
 
     /***
      *  prioritize media library image
@@ -294,6 +306,7 @@ try {
             headingString,
             formattedTypes,
             descriptionString,
+            breadcrumbString,
 
             closeCell8,
             openCell4,
