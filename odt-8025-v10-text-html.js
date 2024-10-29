@@ -340,11 +340,19 @@ try {
         '</a>' +
         '</li>' :
         '<span class="hidden instagramSocial"></span>';
+    let threadsString = (socialTrue && officeDict.threads.content) ?
+        '<li>' +
+        '<a href="' + officeDict.threads.content + '" title="Instagram" aria-label="Instagram opens in a new tab" target="_blank">' +
+        '<span class="show-for-sr">Instagram</span>' +
+        '<span class="fa-brands fa-square-threads" aria-hidden="true"></span>' +
+        '</a>' +
+        '</li>' :
+        '<span class="hidden instagramSocial"></span>';
 
         
 
 
-
+<i class="fa-brands fa-square-threads"></i>
 
 
 
