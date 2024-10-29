@@ -250,12 +250,12 @@ try {
 
 
     /***
-     *  process categories
+     *  process types
      * 
      * */
 
-    let formattedTopics = (officeDict.topics.content) ?
-    processList(officeDict.topics.content) :
+    let formattedTypes = (officeDict.officeType.content) ?
+    processList(officeDict.officeType.content) :
     '<span class="newsroomArticleTopicsHeader d-none hidden visually-hidden">No Valid Topic Provided</span>';
 
 
@@ -269,6 +269,8 @@ try {
         [
             openGrid,
             openCell8,
+
+            formattedTypes,
 
             closeCell8,
             openCell4,
