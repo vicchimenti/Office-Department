@@ -203,6 +203,8 @@ try {
         schoolsColleges: getContentValues('<t4 type="content" name="Schools & Colleges" output="normal" display_field="value" />'),
         officeType: getContentValues('<t4 type="content" name="Type of Office/Dept" output="normal" display_field="value" />'),
         mediaImage: getContentValues('<t4 type="content" name="Office/Dept Image" output="normal" formatter="path/*" />'),
+        phone: getContentValues('<t4 type="content" name="Phone" output="normal" modifiers="striptags,htmlentities" />'),
+        
 
 
 
