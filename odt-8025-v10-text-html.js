@@ -232,6 +232,8 @@ try {
     let closeCell8 = '</div></div>';
     let openCell4 = '<aside class="cell medium-4">';
     let closeCell4 = '</aside>';
+    let openDetail = '<div class="office-detail--contact">';
+    let closeDetail = '</div>';
 
 
     
@@ -271,9 +273,8 @@ try {
             closeCell8,
             openCell4,
 
+
             closeCell4,
-
-
             closeGrid
         ]
     );
