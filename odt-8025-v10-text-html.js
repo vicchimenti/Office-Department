@@ -1,117 +1,216 @@
-<div class="hero--basic global-padding--15x">
-  <div class="grid-container">
-
-    <div class="grid-x grid-margin-x">
-
-
-
-      <div class="cell medium-8">
-        <div class="hero--basic__text hero--profile__text text-margin-reset">
-          <h1><t4 type="content" name="Office/Dept Name" output="normal" modifiers="striptags,htmlentities" /></h1>
-
-          <div class="tags tags__links">
-            <h2 class="tags__heading show-for-sr">Profile Type:</h2>
-            <ul>
-                <?php tags_list('<t4 type="content" name="Type of Office/Dept" output="normal" display_field="value" delimiter="|" />','<t4 type="navigation" name="Office and Departments Home Link" id="998" />','typeOfOffice', '|'); ?>
-            </ul>
-          </div>
-
-          <div class="wysiwyg">
-            <p><t4 type="content" name="General Description" output="normal" modifiers="striptags,htmlentities" /></p>
-          </div>
-
-          <div class="global-spacing--3x<t4 type="content" name="Hide Breadcrumbs" output="selective-output" format=" sr-only" />">
-            <t4 type="navigation" name="Breadcrumbs" id="955" />
-          </div>
-
-        </div>
-      </div>
-
-
-      <aside class="cell medium-4">
-        <t4 type="content" name="Office/Dept Image" output="selective-output" process-format="true" format="<figure class=&quot;aspect-ratio-frame&quot; style=&quot;--aspect-ratio: 22/36&quot;>
-          <img loading=&quot;eager&quot; src=&quot;<t4 type=&quot;content&quot; name=&quot;Office/Dept Image&quot; output=&quot;normal&quot; formatter=&quot;v10/image/pxl-crop&quot; cdn=&quot;true&quot; pxl-filter-id=&quot;57&quot; />&quot; srcset=&quot;
-                      <t4 type=&quot;content&quot; name=&quot;Office/Dept Image&quot; output=&quot;normal&quot; formatter=&quot;v10/image/pxl-crop&quot; cdn=&quot;true&quot; pxl-filter-id=&quot;57&quot; /> 360w,
-                      <t4 type=&quot;content&quot; name=&quot;Office/Dept Image&quot; output=&quot;normal&quot; formatter=&quot;v10/image/pxl-crop&quot; cdn=&quot;true&quot; pxl-filter-id=&quot;58&quot; /> 728w&quot;
-            sizes=&quot;(min-width: 1280px) 360px, (min-width: 780px) 29.17vw, calc(100vw - 40px)&quot; alt=&quot;placeholder&quot;>
-        </figure>" formatter="path/*" />
-
-
-        <div class="office-detail--contact">
-          <div class="eyebrow" id="office-title">Contact Information</div>
+    /***
+     *     @author  Victor Chimenti, MSCS
+     *     @file    v9-fulltext.js
+     *                  v9/fulltext
+     *                  Newsroom: Story
+     *                  id:5150
+     *
+     *     This item will be a shareable fullpage URL
+     *     containing the full body of a newsroom story
+     *
+     *     Document will write once when the page loads
+     *
+     *     @version 5.2.13
+     * 
+     */
 
 
 
-          <ul class="icon-list" id="office-list">
 
 
-            <t4 type="content" name="Phone" output="selective-output" process-format="true" format="<li>
-              <span class=&quot;icon-list__icon fas fa-phone&quot; aria-hidden=&quot;true&quot;></span>
-              <span class=&quot;icon-list__content&quot;><a href='tel:<t4 type=&quot;content&quot; name=&quot;Phone&quot; output=&quot;normal&quot; modifiers=&quot;striptags,htmlentities&quot; />'><t4 type=&quot;content&quot; name=&quot;Phone&quot; output=&quot;normal&quot; modifiers=&quot;striptags,htmlentities&quot; /></a></span>
-            </li>" />
 
 
-            <t4 type="content" name="Email" output="selective-output" process-format="true" format="<li>
-              <span class=&quot;icon-list__icon fas fa-envelope&quot; aria-hidden=&quot;true&quot;></span>
-              <span class=&quot;icon-list__content&quot;><a href='mailto:<t4 type=&quot;content&quot; name=&quot;Email&quot; output=&quot;normal&quot; modifiers=&quot;striptags,htmlentities&quot; />'><t4 type=&quot;content&quot; name=&quot;Email&quot; output=&quot;normal&quot; modifiers=&quot;striptags,htmlentities&quot; /></a></span>
-            </li>" />
+
+    /***
+     *      Import T4 Utilities
+     */
+    importClass(com.terminalfour.media.IMediaManager);
+    importClass(com.terminalfour.spring.ApplicationContextProvider);
+    importClass(com.terminalfour.publish.utils.BrokerUtils);
+    importClass(com.terminalfour.media.utils.ImageInfo);
 
 
-            <t4 type="content" name="Location" output="selective-output" process-format="true" format="<li>
-              <span class=&quot;icon-list__icon fas fa-map-marker-alt&quot; aria-hidden=&quot;true&quot;></span>
-              <span class=&quot;icon-list__content&quot;><t4 type=&quot;content&quot; name=&quot;Location&quot; output=&quot;normal&quot; modifiers=&quot;nl2br&quot; /></span>
-            </li>" />
 
 
-            <t4 type="content" name="Opening Hours" output="selective-output" process-format="true" format="<li>
-              <span class=&quot;icon-list__icon fas fa-clock&quot; aria-hidden=&quot;true&quot;></span>
-              <span class=&quot;icon-list__content&quot;><t4 type=&quot;content&quot; name=&quot;Opening Hours&quot; output=&quot;normal&quot; modifiers=&quot;striptags,htmlentities&quot; /></span>
-            </li>" />
-          </ul>
-          <div class="eyebrow" id="connect">Connect</div>
-          <ul class="icon-list social-media btn-row" id="social-media-icons">
+    /***
+     *      Extract values from T4 element tags
+     *      and confirm valid existing content item field
+     */
+    function getContentValues(tag) {
+        try {
+            let _tag = BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, tag).trim();
+            return {
+                isError: false,
+                content: _tag == '' ? null : _tag
+            };
+        } catch (error) {
+            return {
+                isError: true,
+                message: error.message
+            };
+        }
+    }
 
-            <t4 type="content" name="TikTok URL" output="selective-output" process-format="true" format="<li>
-                <a href=&quot;<t4 type=&quot;content&quot; name=&quot;TikTok URL&quot; output=&quot;normal&quot; modifiers=&quot;striptags,htmlentities&quot; />&quot; target=&quot;_blank&quot; aria-label=&quot;Tiktok opens in a new window&quot;>
-                  <span class=&quot;show-for-sr&quot;>Tiktok</span>
-                  <span class=&quot;fa-brands fa-tiktok&quot; aria-hidden=&quot;true&quot;></span>
-                </a>
-              </li>" />
-            <t4 type="content" name="Twitter/X URL" output="selective-output" process-format="true" format="<li>
-              <a href=&quot;<t4 type=&quot;content&quot; name=&quot;Twitter/X URL&quot; output=&quot;normal&quot; modifiers=&quot;striptags,htmlentities&quot; />&quot; target=&quot;_blank&quot; aria-label=&quot;Twitter opens in a new window&quot;>
-                <span class=&quot;show-for-sr&quot;>Twitter</span>
-                <span class=&quot;fa-brands fa-square-x-twitter&quot; aria-hidden=&quot;true&quot;></span>
-              </a>
-            </li>" />
-            <t4 type="content" name="YouTube URL" output="selective-output" process-format="true" format=" <li>
-              <a href=&quot;<t4 type=&quot;content&quot; name=&quot;YouTube URL&quot; output=&quot;normal&quot; modifiers=&quot;striptags,htmlentities&quot; />&quot; target=&quot;_blank&quot; aria-label=&quot;YouTube opens in a new window&quot;>
-                <span class=&quot;show-for-sr&quot;>YouTube</span>
-                <span class=&quot;fa-brands fa-square-youtube&quot; aria-hidden=&quot;true&quot;></span>
-              </a>
-            </li>" />
-            <t4 type="content" name="LinkedIn URL" output="selective-output" process-format="true" format="<li>
-              <a href=&quot;<t4 type=&quot;content&quot; name=&quot;LinkedIn URL&quot; output=&quot;normal&quot; modifiers=&quot;striptags,htmlentities&quot; />&quot; target=&quot;_blank&quot; aria-label=&quot;LinkedIn opens in a new window&quot;>
-                <span class=&quot;show-for-sr&quot;>LinkedIn</span>
-                <span class=&quot;fa-brands fa-linkedin&quot; aria-hidden=&quot;true&quot;></span>
-              </a>
-            </li>" />
-            <t4 type="content" name="Instagram URL" output="selective-output" process-format="true" format="<li>
-              <a href=&quot;<t4 type=&quot;content&quot; name=&quot;Instagram URL&quot; output=&quot;normal&quot; modifiers=&quot;striptags,htmlentities&quot; />&quot; target=&quot;_blank&quot; aria-label=&quot;Instagram opens in a new window&quot;>
-                <span class=&quot;show-for-sr&quot;>Instagram</span>
-                <span class=&quot;fa-brands fa-square-instagram&quot; aria-hidden=&quot;true&quot;></span>
-              </a>
-            </li>" />
-            <t4 type="content" name="Facebook URL" output="selective-output" process-format="true" format="<li>
-              <a href=&quot;<t4 type=&quot;content&quot; name=&quot;Facebook URL&quot; output=&quot;normal&quot; modifiers=&quot;striptags,htmlentities&quot; />&quot; target=&quot;_blank&quot; aria-label=&quot;Facebook opens in a new window&quot;>
-                <span class=&quot;show-for-sr&quot;>Facebook</span>
-                <span class=&quot;fa-brands fa-square-facebook&quot; aria-hidden=&quot;true&quot;></span>
-              </a>
-            </li>" />
 
-          </ul>
-        </div>
-      </aside>
 
-    </div>
-  </div>
-</div>
+
+    /***
+     *      Returns a media object
+     */
+    function getMediaInfo(mediaID) {
+
+        let mediaManager = ApplicationContextProvider.getBean(IMediaManager);
+        let media = mediaManager.get(mediaID, language);
+
+        return media;
+    }
+
+
+
+
+    /***
+     *      Returns a media stream object
+     */
+    function readMedia(mediaID) {
+
+        let mediaObj = getMediaInfo(mediaID);
+        let oMediaStream = mediaObj.getMedia();
+
+        return oMediaStream;
+    }
+
+
+
+
+    /***
+     *     Returns a formatted html img tag
+     *     for a media library image element
+     *
+     */
+    function mediaTag(mediaPath) {
+
+       let itemId = content.get('Media Library Image').getID();
+       let mediaInfo = getMediaInfo(itemId);
+       let media = readMedia(itemId);
+       let info = new ImageInfo();
+       info.setInput(media);
+
+       let mediaHTML = (info.check()) ?
+           '<img src="' + mediaPath + '" aria-label="' + mediaInfo.getName() + '" alt="' + mediaInfo.getDescription() + '" width="' + info.getWidth() + '" height="' + info.getHeight() + '" loading="auto" />' :
+           '<span class="newsroomImageWrapper d-none visually-hidden hidden">Invalid Media ID</span>';
+
+       return mediaHTML;
+    }
+
+
+
+
+    /***
+     *      Returns a formatted html img tag
+     *      for an external image
+     */
+    function externalImageTag(imagePath, imageAlt, imageTitle) {
+
+       let imageHTML = (imagePath && imageAlt) ?
+           '<img src="' + imagePath + '" aria-label="' + imageTitle + '" alt="' + imageAlt + '" loading="auto" />' :
+           (imagePath && !imageAlt) ?
+           '<img src="' + imagePath + '" aria-label="' + imageTitle + '" alt="' + imageTitle + '" loading="auto" />' :
+           '<span class="newsroomImageWrapper d-none visually-hidden hidden">Invalid Image</span>';
+
+       return imageHTML;
+    }
+
+
+
+
+    /***
+     *      Returns an array of list items
+     */
+    function assignList(arrayOfValues) {
+
+       let listValues = '';
+
+       for (let i = 0; i < arrayOfValues.length; i++) {
+
+           if (i < arrayOfValues.length-1) {
+
+               listValues += '' + arrayOfValues[i].trim() + ' / ';
+
+           } else {
+
+               listValues += '' + arrayOfValues[i].trim();
+
+           }
+
+       }
+       
+       return listValues;
+    }
+
+
+
+
+    /***
+     *      Processes and formats list items into their wrapper
+     */
+    function processList(rawValues) {
+
+       let arrayOfTops = rawValues.split(',');
+       let listItems = assignList(arrayOfTops) || null;
+
+       let result = (listItems) ?
+           '<p class="newsroomArticleTopicsHeader">' + listItems + '</p>':
+           '<span class="newsroomArticleTopicsHeader d-none hidden visually-hidden">No Valid Topic Provided</span>';
+
+       return result;
+    }
+
+
+
+ 
+    /***
+     *      Write the document
+     */
+    function writeDocument(array) {
+
+        for (let i = 0; i < array.length; i++) {
+
+            document.write(array[i]);
+        }
+    }
+
+
+
+
+
+
+
+
+    /***
+     *  Main
+     */
+    try {
+
+
+        /***
+         *      Dictionary of content
+         * */
+        let fulltextNewsDict = {
+
+            contentName: getContentValues('<t4 type="content" name="Name" output="normal" modifiers="striptags,htmlentities" />'),
+            headline: getContentValues('<t4 type="content" name="Title" output="normal" modifiers="striptags,htmlentities" />'),
+            articleSetup: getContentValues('<t4 type="content" name="Article Setup" output="normal" modifiers="striptags,htmlentities" />'),
+            articleSubhead: getContentValues('<t4 type="content" name="Article Subhead" output="normal" modifiers="striptags,htmlentities" />'),
+            mediaImage: getContentValues('<t4 type="content" name="Media Library Image" output="normal" formatter="path/*" />'),
+            externalImage: getContentValues('<t4 type="content" name="Image" output="imageurl" />'),
+            externalImageAlt: getContentValues('<t4 type="content" name="Alt text" output="normal" modifiers="striptags,htmlentities" />'),
+            imageCredit: getContentValues('<t4 type="content" name="Image Credit" output="normal" modifiers="striptags,htmlentities" />'),
+            caption: getContentValues('<t4 type="content" name="Image Caption" output="normal" modifiers="striptags,htmlentities" />'),
+            publishDate: getContentValues('<t4 type="content" name="Publish Date" output="normal" date_format="MMMM d, yyyy" />'),
+            author: getContentValues('<t4 type="content" name="Author" output="normal" modifiers="striptags,htmlentities" />'),
+            topics: getContentValues('<t4 type="content" name="Topics" output="normal" display_field="name" modifiers="htmlentities" />'),
+            fullStory: getContentValues('<t4 type="content" name="Story article" output="normal" modifiers="medialibrary,nav_sections" />'),
+            anchor: getContentValues('<t4 type="meta" meta="html_anchor" />'),
+            contentId: getContentValues('<t4 type="meta" meta="content_id" />')
+
+        };
