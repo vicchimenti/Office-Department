@@ -253,9 +253,9 @@ try {
      *  Description
      * 
      * */
-    let headingString = (officeDict.officeName.content) ?
-    '<h1>' + officeDict.officeName.content + '</h1>' :
-    '<h1>' + officeDict.contentName.content + '</h1>';
+    let descriptionString = (officeDict.description.content) ?
+    '<div class="wysiwyg"><p>' + officeDict.description.content + '</p></div>' :
+    '<span class="hidden generalDescription"></span>';
 
 
     
@@ -292,6 +292,7 @@ try {
             openCell8,
             headingString,
             formattedTypes,
+            descriptionString,
 
             closeCell8,
             openCell4,
