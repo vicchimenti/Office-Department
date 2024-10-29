@@ -264,6 +264,9 @@ try {
     writeDocument(
         [
             openGrid,
+            openCell8,
+
+            closeCell8,
 
 
             closeGrid
