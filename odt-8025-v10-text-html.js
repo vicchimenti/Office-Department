@@ -308,6 +308,14 @@ try {
         '</a>' +
         '</li>' :
         '<span class="hidden tiktokSocial"></span>';
+    let twitterString = (socialTrue && officeDict.twitter.content) ?
+        '<li>' +
+        '<a href="' + officeDict.twitter.content + '" title="Twitter X" aria-label="Twitter X opens in a new tab" target="_blank">' +
+        '<span class="show-for-sr">Twitter X</span>' +
+        '<span class="fa-brands fa-square-x-twitter" aria-hidden="true"></span>' +
+        '</a>' +
+        '</li>' :
+        '<span class="hidden xSocial"></span>';
 
 
         
