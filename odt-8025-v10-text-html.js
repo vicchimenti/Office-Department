@@ -198,6 +198,10 @@ try {
 
         contentName: getContentValues('<t4 type="content" name="Name" output="normal" modifiers="striptags,htmlentities" />'),
         officeName: getContentValues('<t4 type="content" name="Office/Dept Name" output="normal" modifiers="striptags,htmlentities" />'),
+        description: getContentValues('<t4 type="content" name="General Description" output="normal" modifiers="striptags,htmlentities,nl2br" />'),
+        breadcrumbs: getContentValues('<t4 type="content" name="Hide Breadcrumbs" output="normal" display_field="value" />'),
+        schoolsColleges: getContentValues('<t4 type="content" name="Schools & Colleges" output="normal" display_field="value" />'),
+
 
 
 
