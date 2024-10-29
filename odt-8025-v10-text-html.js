@@ -272,7 +272,7 @@ try {
 
             closeCell8,
             openCell4,
-
+            imageString,
             openDetail,
 
             closeDetail,
