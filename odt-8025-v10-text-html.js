@@ -236,6 +236,17 @@ try {
     let closeDetail = '</div>';
 
 
+
+
+    /***
+     *  h1 heading
+     * 
+     * */
+    let headingString = (officeDict.officeName.content) ?
+        '<h1>' + officeDict.officeName.content + '</h1>' :
+        '<h1>' + officeDict.contentName.content + '</h1>';
+
+
     
 
     /***
@@ -243,8 +254,8 @@ try {
      * 
      * */
     let imageString = (officeDict.mediaImage.content) ?
-    mediaTag(officeDict.mediaImage.content) :
-    externalImageTag(officeDict.externalImage.content, officeDict.externalImageAlt.content, officeDict.contentName.content);
+        mediaTag(officeDict.mediaImage.content) :
+        externalImageTag(officeDict.externalImage.content, officeDict.externalImageAlt.content, officeDict.contentName.content);
 
 
 
@@ -255,8 +266,8 @@ try {
      * */
 
     let formattedTypes = (officeDict.officeType.content) ?
-    processList(officeDict.officeType.content) :
-    '<span class="newsroomArticleTopicsHeader d-none hidden visually-hidden">No Valid Topic Provided</span>';
+        processList(officeDict.officeType.content) :
+        '<span class="newsroomArticleTopicsHeader d-none hidden visually-hidden">No Valid Topic Provided</span>';
 
 
 
@@ -269,7 +280,7 @@ try {
         [
             openGrid,
             openCell8,
-
+            headingString,
             formattedTypes,
 
             closeCell8,
