@@ -115,7 +115,7 @@ function processQuery(query) {
     let pattern = " ";
     let replacement = '%20';
     
-    return query.replace(pattern, replacement);
+    return query.replaceAll(pattern, replacement);
 }
 
 
