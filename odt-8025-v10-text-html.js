@@ -82,9 +82,10 @@ function readMedia(mediaID) {
 /***
  *     Returns a formatted html img tag
  *     for a media library image element
+ *     with required attributes
  *
  */
-function mediaTag(mediaPath) {
+function mediaTag(mediaPath, mediaPathFull) {
 
     let itemId = content.get('Media Library Image').getID();
     let mediaInfo = getMediaInfo(itemId);
