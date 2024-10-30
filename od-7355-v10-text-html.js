@@ -107,6 +107,7 @@ function mediaTag(mediaPath, mediaPathFull) {
 
 
 
+
 /***
  *      Create Query
  */
@@ -135,6 +136,7 @@ function processLinks(linkTag) {
 
 
 
+
 /***
  *      Returns an array of list items
  */
@@ -154,6 +156,7 @@ function assignList(arrayOfValues) {
     
     return listValues;
 }
+
 
 
 
@@ -474,7 +477,6 @@ try {
         '</li>' : null;
     let socialArray = (socialTrue) ? [tiktokString, twitterString, youtubeString, linkedinString, instagramString, facebookString, threadsString] : null;
     let socialString = iconValidator(socialArray, "socialDetails");
-
 
 
 
