@@ -121,6 +121,33 @@ function externalImageTag(imagePath, imageAlt, imageTitle) {
 
 
 /***
+ *      Create Query
+ */
+function processQuery(query) {
+
+    let regex = " ";
+    let replacement = '%20';
+    
+    return query.replace(regex, replacement);
+}
+
+
+
+
+/***
+ *      Link Builder
+ */
+function processLinks(linkTag) {
+
+    let queryItem = processQuery(linkTag);
+
+    return '<li><a href="https://www.seattleu.edu/office-directory/?typeOfOffice='+queryItem+'" data-t4-ajax-link="true">' + linkTag + '</a></li>';
+
+}
+
+
+
+/***
  *      Returns an array of list items
  */
 function assignList(arrayOfValues) {
@@ -129,15 +156,11 @@ function assignList(arrayOfValues) {
 
     for (let i = 0; i < arrayOfValues.length; i++) {
 
-        if (i < arrayOfValues.length-1) {
 
-            listValues += '' + arrayOfValues[i].trim() + ' / ';
+        let linkItem = String(arrayOfValues[i]).trim();
+        
+        listValues += processLinks(linkItem);
 
-        } else {
-
-            listValues += '' + arrayOfValues[i].trim();
-
-        }
 
     }
     
@@ -157,7 +180,7 @@ function processList(rawValues) {
 
     let result = (listItems) ?
         '<div class="tags tags__links"><h2 class="tags__heading show-for-sr">Profile Type:</h2><ul>' + listItems + '</ul></h2></div>':
-        '<span class="newsroomArticleTopicsHeader d-none hidden visually-hidden">No Valid Topic Provided</span>';
+        '<span class="hidden officeTypeList"></span>';
 
     return result;
 }
@@ -246,6 +269,17 @@ try {
     let headingString = (officeDict.officeName.content) ?
         '<h1>' + officeDict.officeName.content + '</h1>' :
         '<h1>' + officeDict.contentName.content + '</h1>';
+
+
+
+
+    /***
+     *  process types
+     * 
+     * */
+    let formattedTypes = (officeDict.officeType.content) ?
+    processList(officeDict.officeType.content) :
+    '<span class="hidden officeType"></span>';
 
 
 
@@ -375,23 +409,7 @@ try {
 
 
 
-
-    /***
-     *  process types
-     * 
-     * */
-    let formattedTypes = (officeDict.officeType.content) ?
-        processList(officeDict.officeType.content) :
-        '<span class="newsroomArticleTopicsHeader d-none hidden visually-hidden">No Valid Topic Provided</span>';
-
-    //     let openSocial = (socialTrue) ?
-    //     '<div class="eyebrow" id="office-title">Contact Information</div><ul class="icon-list" id="office-list">' :
-    //     '<span class="hidden socialList"></span>';
-    // let closeSocial = (socialTrue) ?
-    //     '</ul></div>' :
-    //     '<span class="hidden socialLinks"></span>';
-
-
+        
     /***
      *  write document once
      * 
