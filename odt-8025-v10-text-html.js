@@ -7,7 +7,7 @@
  *
  *     Document will write once when the page loads
  *
- *     @version 1.0.3
+ *     @version 1.0.4
  * 
  */
 
@@ -396,8 +396,6 @@ try {
 
 
     
-
-
 
     /***
      *  Social links
