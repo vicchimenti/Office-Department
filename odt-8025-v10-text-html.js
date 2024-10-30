@@ -384,7 +384,7 @@ try {
     let locationString = (iconTrue && officeDict.location.content) ?
         '<li>' +
         '<span class="icon-list__icon fas fa-map-marker-alt" aria-hidden="true"></span>' +
-        '<span class="icon-list__content">' +
+        '<span class="icon-list__content">' + officeDict.location.content + '</span>' +
         '<a href="mailto:'+officeDict.location.content+'">' + officeDict.location.content + '</a>' +
         '</span>' +
         '</li>' :
