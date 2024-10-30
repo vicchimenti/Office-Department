@@ -276,8 +276,8 @@ try {
      * 
      * */
     let formattedTypes = (officeDict.officeType.content) ?
-    processList(officeDict.officeType.content) :
-    '<span class="hidden officeType"></span>';
+        processList(officeDict.officeType.content) :
+        '<span class="hidden officeType"></span>';
 
 
 
