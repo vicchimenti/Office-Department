@@ -335,7 +335,6 @@ try {
 
 
 
-
     /***
      *  Detail Wrappers
      * 
