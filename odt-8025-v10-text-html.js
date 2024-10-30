@@ -465,10 +465,7 @@ try {
             openIconList,
 
             closeIconList,
-
-
             openSocial,
-
             tiktokString,
             twitterString,
             youtubeString,
@@ -476,9 +473,7 @@ try {
             instagramString,
             facebookString,
             threadsString,
-
             closeSocial,
-
             closeDetail,
             closeCell4,
             closeGrid
