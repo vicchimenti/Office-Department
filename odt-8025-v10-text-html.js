@@ -375,7 +375,7 @@ try {
         '<span class="hidden phoneLink"></span>';
     let emailString = (iconTrue && officeDict.email.content) ?
         '<li>' +
-        '<span class="icon-list__icon fas fa-phone" aria-hidden="true"></span>' +
+        '<span class="icon-list__icon fas fa-envelope" aria-hidden="true"></span>' +
         '<span class="icon-list__content">' +
         '<a href="tel:'+officeDict.phone.content+'">' + officeDict.phone.content + '</a>' +
         '</span>' +
