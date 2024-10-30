@@ -175,6 +175,15 @@ function processList(rawValues) {
 
 
 
+function iconValidator(array) {
+    let resultsArray = "";
+
+    return resultsArray;
+}
+
+
+
+
 /***
  *      Write the document
  */
@@ -392,6 +401,8 @@ try {
     let contactString = iconValidator(contactArray);
     
 
+
+
     /***
      *  Social links
      * 
@@ -447,6 +458,8 @@ try {
         '</li>' : null;
     let socialArray = (socialTrue) ? [tiktokString, twitterString, youtubeString, linkedinString, instagramString, facebookString, threadsString] : null;
     let socialString = iconValidator(socialArray);
+
+
 
 
 
