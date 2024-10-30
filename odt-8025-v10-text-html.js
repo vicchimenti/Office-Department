@@ -96,9 +96,7 @@ function mediaTag(mediaPath, mediaPathFull) {
     let info = new ImageInfo();
     info.setInput(media);
 
-    'srcset="<t4 type=&quot;content&quot; name=&quot;Office/Dept Image&quot; output=&quot;normal&quot; formatter=&quot;v10/image/pxl-crop&quot; cdn=&quot;true&quot; pxl-filter-id=&quot;57&quot; /> 360w,
-                      <t4 type=&quot;content&quot; name=&quot;Office/Dept Image&quot; output=&quot;normal&quot; formatter=&quot;v10/image/pxl-crop&quot; cdn=&quot;true&quot; pxl-filter-id=&quot;58&quot; /> 728w&quot;
-            sizes=&quot;(min-width: 1280px) 360px, (min-width: 780px) 29.17vw, calc(100vw - 40px)&quot;'
+    'sizes="(min-width: 1280px) 360px, (min-width: 780px) 29.17vw, calc(100vw - 40px)"'
 
     let mediaHTML = (info.check()) ?
         '<figure class="aspect-ratio-frame" style="--aspect-ratio: 22/36">' +
