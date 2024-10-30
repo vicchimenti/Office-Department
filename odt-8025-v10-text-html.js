@@ -208,7 +208,7 @@ try {
         breadcrumbs: getContentValues('<t4 type="navigation" name="Breadcrumbs" id="955" />'),
         schoolsColleges: getContentValues('<t4 type="content" name="Schools & Colleges" output="normal" display_field="value" />'),
         officeType: getContentValues('<t4 type="content" name="Type of Office/Dept" output="normal" display_field="value" />'),
-        mediaImage: getContentValues('<t4 type="content" name="Office/Dept Image" output="normal" formatter="path/*" />'),
+        mediaImage: getContentValues('<t4 type="content" name="Office/Dept Image" output="normal" formatter="v10/image/pxl-crop" cdn="true" pxl-filter-id="57" />'),
         phone: getContentValues('<t4 type="content" name="Phone" output="normal" modifiers="striptags,htmlentities" />'),
         email: getContentValues('<t4 type="content" name="Email" output="normal" modifiers="striptags,htmlentities,encode_emails" />'),
         location: getContentValues('<t4 type="content" name="Location" output="normal" modifiers="nl2br" />'),
