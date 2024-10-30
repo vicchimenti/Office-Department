@@ -381,6 +381,14 @@ try {
         '</span>' +
         '</li>' :
         '<span class="hidden emailLink"></span>';
+    let locationString = (iconTrue && officeDict.location.content) ?
+        '<li>' +
+        '<span class="icon-list__icon fas fa-envelope" aria-hidden="true"></span>' +
+        '<span class="icon-list__content">' +
+        '<a href="mailto:'+officeDict.location.content+'">' + officeDict.location.content + '</a>' +
+        '</span>' +
+        '</li>' :
+        '<span class="hidden locationLink"></span>';
 
 
     
