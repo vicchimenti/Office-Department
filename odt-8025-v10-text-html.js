@@ -307,6 +307,17 @@ try {
 
 
     /***
+     *  media library image
+     * 
+     * */
+    let imageString = (officeDict.mediaImage.content) ?
+    mediaTag(officeDict.mediaImage.content) :
+    '<span class="hidden noImage"></span>';
+
+
+
+
+    /***
      *  Icon list
      * 
      * */
@@ -461,18 +472,6 @@ try {
 
 
 
-
-
-    
-
-
-    /***
-     *  prioritize media library image
-     * 
-     * */
-    let imageString = (officeDict.mediaImage.content) ?
-        mediaTag(officeDict.mediaImage.content) :
-        '<span class="hidden noImage"></span>';
 
 
 
