@@ -89,7 +89,7 @@ function mediaTag(mediaPath, mediaPathFull) {
 
     let imageW1 = ' 360w, ';
     let imageW2 = ' 728w';
-    let itemId = content.get('Media Library Image').getID();
+    let itemId = content.get('Office/Dept Image').getID();
     let mediaInfo = getMediaInfo(itemId);
     let media = readMedia(itemId);
     let info = new ImageInfo();
