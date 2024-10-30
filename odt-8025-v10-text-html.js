@@ -372,7 +372,7 @@ try {
         '<a href="tel:"></a>' +
         '</span>' +
         '</li>' :
-        '';
+        '<span class="hidden phoneLink"></span>';
 
 
 
