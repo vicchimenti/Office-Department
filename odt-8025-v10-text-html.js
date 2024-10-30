@@ -102,7 +102,7 @@ function mediaTag(mediaPath, mediaPathFull) {
 
     let mediaHTML = (info.check()) ?
         '<figure class="aspect-ratio-frame" style="--aspect-ratio: 22/36">' +
-        '<img loading="eager" src="' + mediaPath + '" srcset="" aria-label="' + mediaInfo.getName() + '" alt="' + mediaInfo.getDescription() + '" width="' + info.getWidth() + '" height="' + info.getHeight() + '" class="js-processed" />' +
+        '<img loading="eager" src="' + mediaPath + '" srcset="' + mediaPath + imageW1 + mediaPathFull + imageW2 + '" aria-label="' + mediaInfo.getName() + '" alt="' + mediaInfo.getDescription() + '" width="' + info.getWidth() + '" height="' + info.getHeight() + '" class="js-processed" />' +
         '</figure>' :
         '<span class="newsroomImageWrapper d-none visually-hidden hidden">Invalid Media ID</span>';
 
