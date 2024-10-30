@@ -88,7 +88,7 @@ function readMedia(mediaID) {
 function mediaTag(mediaPath, mediaPathFull) {
 
     let imageW1 = ' 360w, ';
-    let imageW2 = ' 728w, ';
+    let imageW2 = ' 728w';
 
     let itemId = content.get('Media Library Image').getID();
     let mediaInfo = getMediaInfo(itemId);
@@ -102,7 +102,7 @@ function mediaTag(mediaPath, mediaPathFull) {
 
     let mediaHTML = (info.check()) ?
         '<figure class="aspect-ratio-frame" style="--aspect-ratio: 22/36">' +
-        '<img loading="eager" src="' + mediaPath + '" srcset="' + mediaPath + ' ' + 360w, + ' ' + mediaPathFull + ' ''" aria-label="' + mediaInfo.getName() + '" alt="' + mediaInfo.getDescription() + '" width="' + info.getWidth() + '" height="' + info.getHeight() + '" class="js-processed" />' +
+        '<img loading="eager" src="" srcset="" aria-label="' + mediaInfo.getName() + '" alt="' + mediaInfo.getDescription() + '" width="' + info.getWidth() + '" height="' + info.getHeight() + '" class="js-processed" />' +
         '</figure>' :
         '<span class="newsroomImageWrapper d-none visually-hidden hidden">Invalid Media ID</span>';
 
