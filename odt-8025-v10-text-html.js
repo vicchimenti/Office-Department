@@ -256,8 +256,6 @@ try {
     let closeCell8 = '</div></div>';
     let openCell4 = '<aside class="cell medium-4">';
     let closeCell4 = '</aside>';
-    // let openDetail = '<div class="office-detail--contact">';
-    // let closeDetail = '</div>';
 
 
 
@@ -320,6 +318,10 @@ try {
                         officeDict.facebook.content       ||
                         officeDict.threads.content    )   ?
                         true : false;
+
+
+
+
     /***
      *  Icon list
      * 
@@ -330,6 +332,20 @@ try {
                         officeDict.openingHours.content   )  ?
                         true : false;
 
+
+
+
+    /***
+     *  Detail Wrappers
+     * 
+     * */
+    let openDetail = (socialTrue || iconTrue) ?
+        '<div class="office-detail--contact">' :
+        '<span class="hidden contactSocial"></span>';
+    let closeDetail = (socialTrue || iconTrue) ?
+        '</div>' :
+        '<span class="hidden contactSocialClosure"></span>';
+                            
     let openSocial = (socialTrue) ?
         '<div class="eyebrow" id="connect">Connect</div><ul class="icon-list social-media btn-row" id="social-media-icons">' :
         '<span class="hidden socialList"></span>';
@@ -339,7 +355,7 @@ try {
 
 
 
-    let openIconList = (socialTrue || ) ?
+    let openIconList = (socialTrue || iconTrue) ?
         '<div class="eyebrow" id="connect">Connect</div><ul class="icon-list social-media btn-row" id="social-media-icons">' :
         '<span class="hidden socialList"></span>';
     
@@ -441,11 +457,13 @@ try {
             closeCell8,
             openCell4,
             imageString,
-            openIconList,
-
             openDetail,
 
+            openIconList,
+
+
             openSocial,
+
             tiktokString,
             twitterString,
             youtubeString,
@@ -453,10 +471,10 @@ try {
             instagramString,
             facebookString,
             threadsString,
+
             closeSocial,
 
             closeDetail,
-
             closeCell4,
             closeGrid
         ]
