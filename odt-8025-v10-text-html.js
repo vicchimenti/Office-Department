@@ -309,9 +309,9 @@ try {
      *  Breadcrumbs
      * 
      * */
-    let breadcrumbString = (officeDict.breadcrumbOption.content && officeDict.breadcrumbs.content) ?
+    let breadcrumbString = (!officeDict.breadcrumbOption.content && officeDict.breadcrumbs.content) ?
         '<div class="global-spacing--3x">' + officeDict.breadcrumbs.content + '</div>' :
-        (!officeDict.breadcrumbOption.content && officeDict.breadcrumbs.content) ?
+        (officeDict.breadcrumbOption.content && officeDict.breadcrumbs.content) ?
         '<div class="global-spacing--3x sr-only">' + officeDict.breadcrumbs.content + '</div>' :
         '<span class="hidden nobreadcrumbs"></span>';
 
