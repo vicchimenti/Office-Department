@@ -389,7 +389,7 @@ try {
         '<span class="icon-list__content">' + officeDict.openingHours.content + '</span>' +
         '</li>' : null;
     let contactArray = [phoneString, emailString, locationString, openingHoursString];
-
+    let contactString = iconValidator(contactArray);
     
 
     /***
@@ -446,6 +446,7 @@ try {
         '</a>' +
         '</li>' : null;
     let socialArray = [tiktokString, twitterString, youtubeString, linkedinString, instagramString, facebookString, threadsString];
+    let socialString = iconValidator(socialArray);
 
 
 
