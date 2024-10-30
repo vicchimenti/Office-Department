@@ -112,7 +112,7 @@ function mediaTag(mediaPath, mediaPathFull) {
  */
 function processQuery(query) {
 
-    let pattern = " ";
+    let pattern = / /gi;
     let replacement = '%20';
     
     return query.replaceAll(pattern, replacement);
