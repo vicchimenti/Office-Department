@@ -98,7 +98,9 @@ function mediaTag(mediaPath, mediaPathFull) {
             sizes=&quot;(min-width: 1280px) 360px, (min-width: 780px) 29.17vw, calc(100vw - 40px)&quot;'
 
     let mediaHTML = (info.check()) ?
-        '<figure class="aspect-ratio-frame" style="--aspect-ratio: 22/36"><img loading="eager" src="' + mediaPath + '" aria-label="' + mediaInfo.getName() + '" alt="' + mediaInfo.getDescription() + '" width="' + info.getWidth() + '" height="' + info.getHeight() + '" class="js-processed" /></figure>' :
+        '<figure class="aspect-ratio-frame" style="--aspect-ratio: 22/36">' +
+        '<img loading="eager" src="' + mediaPath + '" srcset="" aria-label="' + mediaInfo.getName() + '" alt="' + mediaInfo.getDescription() + '" width="' + info.getWidth() + '" height="' + info.getHeight() + '" class="js-processed" />' +
+        '</figure>' :
         '<span class="newsroomImageWrapper d-none visually-hidden hidden">Invalid Media ID</span>';
 
     return mediaHTML;
