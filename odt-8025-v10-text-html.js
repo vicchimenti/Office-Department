@@ -324,13 +324,10 @@ try {
      *  Icon list
      * 
      * */
-    let iconTrue = (    officeDict.tiktok.content         ||
-                        officeDict.twitter.content        ||
-                        officeDict.youtube.content        ||
-                        officeDict.linkedin.content       || 
-                        officeDict.instagram.content      ||
-                        officeDict.facebook.content       ||
-                        officeDict.threads.content    )   ?
+    let iconTrue = (    officeDict.phone.content             ||
+                        officeDict.email.content             ||
+                        officeDict.location.content          ||
+                        officeDict.openingHours.content   )  ?
                         true : false;
 
     let openSocial = (socialTrue) ?
