@@ -499,7 +499,7 @@ try {
             phoneString,
             emailString,
             locationString,
-
+            openingHoursString,
             closeIconList,
             openSocial,
             tiktokString,
