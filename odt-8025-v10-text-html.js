@@ -369,7 +369,7 @@ try {
         '<li>' +
         '<span class="icon-list__icon fas fa-phone" aria-hidden="true"></span>' +
         '<span class="icon-list__content">' +
-        '<a href="tel:"></a>' +
+        '<a href="tel:'+officeDict.phone.content+'">' + officeDict.phone.content + '</a>' +
         '</span>' +
         '</li>' :
         '<span class="hidden phoneLink"></span>';
