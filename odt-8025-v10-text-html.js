@@ -407,7 +407,7 @@ try {
         '<span class="fa-brands fa-tiktok" aria-hidden="true"></span>' +
         '</a>' +
         '</li>' :
-        '<span class="hidden tiktokSocial"></span>';
+        '<li class="hidden tiktokSocial"></li>';
     let twitterString = (socialTrue && officeDict.twitter.content) ?
         '<li>' +
         '<a href="' + officeDict.twitter.content + '" title="Twitter X" aria-label="Twitter X opens in a new tab" target="_blank">' +
@@ -415,7 +415,7 @@ try {
         '<span class="fa-brands fa-square-x-twitter" aria-hidden="true"></span>' +
         '</a>' +
         '</li>' :
-        '<span class="hidden xSocial"></span>';
+        '<li class="hidden xSocial"></li>';
     let youtubeString = (socialTrue && officeDict.youtube.content) ?
         '<li>' +
         '<a href="' + officeDict.youtube.content + '" title="YouTube" aria-label="YouTube opens in a new tab" target="_blank">' +
@@ -423,7 +423,7 @@ try {
         '<span class="fa-brands fa-square-youtube" aria-hidden="true"></span>' +
         '</a>' +
         '</li>' :
-        '<span class="hidden youtubeSocial"></span>';
+        '<li class="hidden youtubeSocial"></li>';
     let linkedinString = (socialTrue && officeDict.linkedin.content) ?
         '<li>' +
         '<a href="' + officeDict.linkedin.content + '" title="LinkedIn" aria-label="LinkedIn opens in a new tab" target="_blank">' +
@@ -431,7 +431,7 @@ try {
         '<span class="fa-brands fa-linkedin" aria-hidden="true"></span>' +
         '</a>' +
         '</li>' :
-        '<span class="hidden linkedinSocial"></span>';
+        '<li class="hidden linkedinSocial"></li>';
     let instagramString = (socialTrue && officeDict.instagram.content) ?
         '<li>' +
         '<a href="' + officeDict.instagram.content + '" title="Instagram" aria-label="Instagram opens in a new tab" target="_blank">' +
@@ -439,7 +439,7 @@ try {
         '<span class="fa-brands fa-square-instagram" aria-hidden="true"></span>' +
         '</a>' +
         '</li>' :
-        '<span class="hidden instagramSocial"></span>';
+        '<li class="hidden instagramSocial"></li>';
     let facebookString = (socialTrue && officeDict.facebook.content) ?
         '<li>' +
         '<a href="' + officeDict.facebook.content + '" title="Facebook" aria-label="Facebook opens in a new tab" target="_blank">' +
@@ -447,7 +447,7 @@ try {
         '<span class="fa-brands fa-square-facebook" aria-hidden="true"></span>' +
         '</a>' +
         '</li>' :
-        '<span class="hidden facebookSocial"></span>';
+        '<li class="hidden facebookSocial"></li>';
     let threadsString = (socialTrue && officeDict.threads.content) ?
         '<li>' +
         '<a href="' + officeDict.threads.content + '" title="Threads" aria-label="Threads opens in a new tab" target="_blank">' +
@@ -455,7 +455,7 @@ try {
         '<span class="fa-brands fa-square-threads" aria-hidden="true"></span>' +
         '</a>' +
         '</li>' :
-        '<span class="hidden threadsSocial"></span>';
+        '<li class="hidden threadsSocial"></li>';
         
 
 
