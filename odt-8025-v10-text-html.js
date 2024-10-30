@@ -112,10 +112,10 @@ function mediaTag(mediaPath, mediaPathFull) {
  */
 function processQuery(query) {
 
-    let pattern = '/\s/g';
+    let regex = /\s/g;
     let replacement = '%20';
     
-    return query.replaceAll(pattern, replacement);
+    return query.replaceAll(" ", "%20");
 }
 
 
@@ -126,6 +126,7 @@ function processQuery(query) {
  */
 function processLinks(linkTag) {
 
+    let linkString = String(linkTag);
     let queryItem = processQuery(linkTag);
 
     return '<li><a href=/office-directory/?typeOfOffice='+queryItem+'" data-t4-ajax-link="true">' + linkTag + '</a></li>';
