@@ -113,9 +113,11 @@ function mediaTag(mediaPath, mediaPathFull) {
 function processQuery(query) {
 
     let regex = /\s/g;
-    let replacement = '%20';
+    let replacement = "%20";
+
+    // (/\s/g, '')
     
-    return query.replaceAll(" ", "%20");
+    return query.replace(regex, replacement);
 }
 
 
@@ -126,10 +128,9 @@ function processQuery(query) {
  */
 function processLinks(linkTag) {
 
-    let linkString = String(linkTag);
     let queryItem = processQuery(linkTag);
 
-    return '<li><a href=/office-directory/?typeOfOffice='+queryItem+'" data-t4-ajax-link="true">' + linkTag + '</a></li>';
+    return '<li><a href="/office-directory/?typeOfOffice='+queryItem+'" data-t4-ajax-link="true">' + linkTag + '</a></li>';
 
 }
 
