@@ -106,16 +106,16 @@ function mediaTag(mediaPath) {
  *      Returns a formatted html img tag
  *      for an external image
  */
-function externalImageTag(imagePath, imageAlt, imageTitle) {
+// function externalImageTag(imagePath, imageAlt, imageTitle) {
 
-    let imageHTML = (imagePath && imageAlt) ?
-        '<img src="' + imagePath + '" aria-label="' + imageTitle + '" alt="' + imageAlt + '" loading="auto" />' :
-        (imagePath && !imageAlt) ?
-        '<img src="' + imagePath + '" aria-label="' + imageTitle + '" alt="' + imageTitle + '" loading="auto" />' :
-        '<span class="newsroomImageWrapper d-none visually-hidden hidden">Invalid Image</span>';
+//     let imageHTML = (imagePath && imageAlt) ?
+//         '<img src="' + imagePath + '" aria-label="' + imageTitle + '" alt="' + imageAlt + '" loading="auto" />' :
+//         (imagePath && !imageAlt) ?
+//         '<img src="' + imagePath + '" aria-label="' + imageTitle + '" alt="' + imageTitle + '" loading="auto" />' :
+//         '<span class="newsroomImageWrapper d-none visually-hidden hidden">Invalid Image</span>';
 
-    return imageHTML;
-}
+//     return imageHTML;
+// }
 
 
 
