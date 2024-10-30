@@ -377,7 +377,7 @@ try {
         '<li>' +
         '<span class="icon-list__icon fas fa-envelope" aria-hidden="true"></span>' +
         '<span class="icon-list__content">' +
-        '<a href="tel:'+officeDict.phone.content+'">' + officeDict.phone.content + '</a>' +
+        '<a href="mailto:'+officeDict.email.content+'">' + officeDict.email.content + '</a>' +
         '</span>' +
         '</li>' :
         '<span class="hidden emailLink"></span>';
@@ -484,7 +484,8 @@ try {
             imageString,
             openDetail,
             openIconList,
-            phoneString, 
+            phoneString,
+            emailString,
 
             closeIconList,
             openSocial,
