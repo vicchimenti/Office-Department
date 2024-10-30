@@ -444,7 +444,7 @@ try {
         '<li>' +
         '<a href="' + officeDict.facebook.content + '" title="Facebook" aria-label="Facebook opens in a new tab" target="_blank">' +
         '<span class="show-for-sr">Facebook</span>' +
-        '<span class="fa-square-facebook" aria-hidden="true"></span>' +
+        '<span class="fa-brands fa-square-facebook" aria-hidden="true"></span>' +
         '</a>' +
         '</li>' :
         '<span class="hidden facebookSocial"></span>';
