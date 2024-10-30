@@ -365,7 +365,9 @@ try {
      *  Contact links
      * 
      * */
-
+    let phoneString = (iconTrue && officeDict.phone.content) ?
+        '' :
+        '';
 
 
 
