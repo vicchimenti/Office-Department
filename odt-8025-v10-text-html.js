@@ -371,7 +371,7 @@ try {
         '<a href="tel:'+officeDict.phone.content+'">' + officeDict.phone.content + '</a>' +
         '</span>' +
         '</li>' :
-        '<li class="hidden phoneLink"><span class="hidden phoneLink"></span></li>';
+        '<li class="hidden phoneLink"></li>';
     let emailString = (iconTrue && officeDict.email.content) ?
         '<li>' +
         '<span class="icon-list__icon fas fa-envelope" aria-hidden="true"></span>' +
@@ -379,13 +379,13 @@ try {
         '<a href="mailto:'+officeDict.email.content+'">' + officeDict.email.content + '</a>' +
         '</span>' +
         '</li>' :
-        '<li class="hidden emailLink"><span class="hidden emailLink"></span></li>';
+        '<li class="hidden emailLink"></li>';
     let locationString = (iconTrue && officeDict.location.content) ?
         '<li>' +
         '<span class="icon-list__icon fas fa-map-marker-alt" aria-hidden="true"></span>' +
         '<span class="icon-list__content">' + officeDict.location.content + '</span>' +
         '</li>' :
-        '<li class="hidden locationIcon"><span class="hidden locationIcon"></span></li>';
+        '<li class="hidden locationIcon"></li>';
     let openingHoursString = (iconTrue && officeDict.openingHours.content) ?
         '<li>' +
         '<span class="icon-list__icon fas fa-clock" aria-hidden="true"></span>' +
