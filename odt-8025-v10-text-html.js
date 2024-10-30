@@ -307,6 +307,19 @@ try {
 
 
     /***
+     *  Icon list
+     * 
+     * */
+    let iconTrue = (    officeDict.phone.content             ||
+        officeDict.email.content             ||
+        officeDict.location.content          ||
+        officeDict.openingHours.content   )  ?
+        true : false;
+
+
+
+
+    /***
      *  Social list
      * 
      * */
@@ -322,18 +335,6 @@ try {
 
 
 
-    /***
-     *  Icon list
-     * 
-     * */
-    let iconTrue = (    officeDict.phone.content             ||
-                        officeDict.email.content             ||
-                        officeDict.location.content          ||
-                        officeDict.openingHours.content   )  ?
-                        true : false;
-
-
-
 
     /***
      *  Detail Wrappers
@@ -345,19 +346,22 @@ try {
     let closeDetail = (socialTrue || iconTrue) ?
         '</div>' :
         '<span class="hidden contactSocialClosure"></span>';
-                            
+    let openIconList = (iconTrue) ?
+        '<div class="eyebrow" id="office-title">Contact Information</div><ul class="icon-list" id="office-list">' :
+        '<span class="hidden contactList"></span>';
+    let closeIconList = (iconTrue) ?
+        '</ul>' :
+        '<span class="hidden contactListClosure"></span>';                      
     let openSocial = (socialTrue) ?
         '<div class="eyebrow" id="connect">Connect</div><ul class="icon-list social-media btn-row" id="social-media-icons">' :
         '<span class="hidden socialList"></span>';
     let closeSocial = (socialTrue) ?
         '</ul>' :
-        '<span class="hidden socialLinks"></span>';
+        '<span class="hidden socialLinksClosure"></span>';
 
 
 
-    let openIconList = (socialTrue || iconTrue) ?
-        '<div class="eyebrow" id="connect">Connect</div><ul class="icon-list social-media btn-row" id="social-media-icons">' :
-        '<span class="hidden socialList"></span>';
+
     
 
 
@@ -458,8 +462,9 @@ try {
             openCell4,
             imageString,
             openDetail,
-
             openIconList,
+
+            closeIconList,
 
 
             openSocial,
