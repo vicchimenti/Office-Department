@@ -112,10 +112,10 @@ function mediaTag(mediaPath, mediaPathFull) {
  */
 function processQuery(query) {
 
-    let regex = " ";
+    let pattern = " ";
     let replacement = '%20';
     
-    return query.replace(regex, replacement);
+    return query.replace(pattern, replacement);
 }
 
 
