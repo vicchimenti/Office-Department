@@ -477,6 +477,7 @@ try {
             imageString,
             openDetail,
             openIconList,
+            phoneString, 
 
             closeIconList,
             openSocial,
