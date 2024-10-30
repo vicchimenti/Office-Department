@@ -100,7 +100,7 @@ function mediaTag(mediaPath, mediaPathFull) {
         '<figure class="aspect-ratio-frame" style="--aspect-ratio: 22/36">' +
         '<img loading="eager" src="' + mediaPath + '" srcset="' + mediaPath + imageW1 + mediaPathFull + imageW2 + '" sizes="(min-width: 1280px) 360px, (min-width: 780px) 29.17vw, calc(100vw - 40px)" aria-label="' + mediaInfo.getName() + '" alt="' + mediaInfo.getDescription() + '" width="' + info.getWidth() + '" height="' + info.getHeight() + '" class="js-processed" />' +
         '</figure>' :
-        '<span class="newsroomImageWrapper d-none visually-hidden hidden">Invalid Media ID</span>';
+        '<span class="hidden invalidMediaId"></span>';
 
     return mediaHTML;
 }
