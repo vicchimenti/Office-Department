@@ -386,7 +386,13 @@ try {
         '<span class="icon-list__icon fas fa-map-marker-alt" aria-hidden="true"></span>' +
         '<span class="icon-list__content">' + officeDict.location.content + '</span>' +
         '</li>' :
-        '<span class="hidden locationLink"></span>';
+        '<span class="hidden locationIcon"></span>';
+    let openingHoursString = (iconTrue && officeDict.openingHours.content) ?
+        '<li>' +
+        '<span class="icon-list__icon fas fa-map-marker-alt" aria-hidden="true"></span>' +
+        '<span class="icon-list__content">' + officeDict.openingHours.content + '</span>' +
+        '</li>' :
+        '<span class="hidden openingHoursIcon"></span>';
 
 
     
