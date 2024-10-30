@@ -190,7 +190,7 @@ function iconValidator(array, tag) {
         }
     } else {
 
-        resultsArray = '<span class="hidden noDetails"></span>'
+        resultsArray = '<span class="hidden ' + tag + '"></span>'
     }
 
     return resultsArray;
