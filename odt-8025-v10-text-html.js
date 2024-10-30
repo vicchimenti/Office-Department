@@ -370,29 +370,25 @@ try {
         '<span class="icon-list__content">' +
         '<a href="tel:'+officeDict.phone.content+'">' + officeDict.phone.content + '</a>' +
         '</span>' +
-        '</li>' :
-        '<li class="hidden phoneLink"></li>';
+        '</li>' : null;
     let emailString = (iconTrue && officeDict.email.content) ?
         '<li>' +
         '<span class="icon-list__icon fas fa-envelope" aria-hidden="true"></span>' +
         '<span class="icon-list__content">' +
         '<a href="mailto:'+officeDict.email.content+'">' + officeDict.email.content + '</a>' +
         '</span>' +
-        '</li>' :
-        '<li class="hidden emailLink"></li>';
+        '</li>' : null;
     let locationString = (iconTrue && officeDict.location.content) ?
         '<li>' +
         '<span class="icon-list__icon fas fa-map-marker-alt" aria-hidden="true"></span>' +
         '<span class="icon-list__content">' + officeDict.location.content + '</span>' +
-        '</li>' :
-        '<li class="hidden locationIcon"></li>';
+        '</li>' : null;
     let openingHoursString = (iconTrue && officeDict.openingHours.content) ?
         '<li>' +
         '<span class="icon-list__icon fas fa-clock" aria-hidden="true"></span>' +
         '<span class="icon-list__content">' + officeDict.openingHours.content + '</span>' +
-        '</li>' :
-        '<li class="hidden locationIcon"></li>';
-
+        '</li>' : null;
+    let contactArray = [phoneString, emailString, locationString, openingHoursString];
 
     
 
