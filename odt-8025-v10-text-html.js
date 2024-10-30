@@ -115,7 +115,7 @@ function processQuery(query) {
     let pattern = '/ /gi';
     let replacement = '%20';
     
-    return query.replaceAll(pattern, replacement);
+    return query.replaceAll(" ", replacement);
 }
 
 
