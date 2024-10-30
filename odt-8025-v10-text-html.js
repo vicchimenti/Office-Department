@@ -366,7 +366,12 @@ try {
      * 
      * */
     let phoneString = (iconTrue && officeDict.phone.content) ?
-        '' :
+        '<li>' +
+        '<span class="icon-list__icon fas fa-phone" aria-hidden="true"></span>' +
+        '<span class="icon-list__content">' +
+        '<a href="tel:"></a>' +
+        '</span>' +
+        '</li>' :
         '';
 
 
