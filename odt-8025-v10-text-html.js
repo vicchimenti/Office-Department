@@ -141,7 +141,7 @@ function processLinks(linkTag) {
 
     let queryItem = processQuery(linkTag);
 
-    return '<li><a href="https://www.seattleu.edu/office-directory/?typeOfOffice='+queryItem+'" data-t4-ajax-link="true">' + linkTag + '</a></li>';
+    return '<li><a href=/office-directory/?typeOfOffice='+queryItem+'" data-t4-ajax-link="true">' + linkTag + '</a></li>';
 
 }
 
@@ -409,7 +409,7 @@ try {
 
 
 
-        
+
     /***
      *  write document once
      * 
