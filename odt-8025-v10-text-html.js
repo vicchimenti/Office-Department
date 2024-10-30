@@ -342,10 +342,10 @@ try {
      * */
     let openDetail = (socialTrue || iconTrue) ?
         '<div class="office-detail--contact">' :
-        '<span class="hidden contactSocial"></span>';
+        '<span class="hidden detailWrapper"></span>';
     let closeDetail = (socialTrue || iconTrue) ?
         '</div>' :
-        '<span class="hidden contactSocialClosure"></span>';
+        '<span class="hidden detailWrapperClosure"></span>';
     let openIconList = (iconTrue) ?
         '<div class="eyebrow" id="office-title">Contact Information</div><ul class="icon-list" id="office-list">' :
         '<span class="hidden contactList"></span>';
