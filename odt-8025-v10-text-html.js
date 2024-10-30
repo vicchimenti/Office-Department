@@ -115,7 +115,6 @@ function processQuery(query) {
     let regex = /\s/g;
     let replacement = "%20";
 
-    // (/\s/g, '')
     
     return query.replace(regex, replacement);
 }
@@ -130,8 +129,8 @@ function processLinks(linkTag) {
 
     let queryItem = processQuery(linkTag);
 
-    return '<li><a href="/office-directory/?typeOfOffice='+queryItem+'" data-t4-ajax-link="true">' + linkTag + '</a></li>';
 
+    return '<li><a href="/office-directory/?typeOfOffice='+queryItem+'" data-t4-ajax-link="true">' + linkTag + '</a></li>';
 }
 
 
