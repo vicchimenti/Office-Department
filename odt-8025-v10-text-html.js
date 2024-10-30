@@ -93,7 +93,7 @@ function mediaTag(mediaPath) {
     info.setInput(media);
 
     let mediaHTML = (info.check()) ?
-        '<img src="' + mediaPath + '" aria-label="' + mediaInfo.getName() + '" alt="' + mediaInfo.getDescription() + '" width="' + info.getWidth() + '" height="' + info.getHeight() + '" loading="auto" />' :
+        '<figure class="aspect-ratio-frame" style="--aspect-ratio: 22/36"><img loading="eager" src="' + mediaPath + '" aria-label="' + mediaInfo.getName() + '" alt="' + mediaInfo.getDescription() + '" width="' + info.getWidth() + '" height="' + info.getHeight() + '" loading="auto" />' :
         '<span class="newsroomImageWrapper d-none visually-hidden hidden">Invalid Media ID</span>';
 
     return mediaHTML;
