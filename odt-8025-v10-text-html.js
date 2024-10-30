@@ -175,8 +175,23 @@ function processList(rawValues) {
 
 
 
-function iconValidator(array) {
+function iconValidator(array, tag) {
+    
     let resultsArray = "";
+
+    if (array) {
+
+        for (let i = 0; i < array.length; i++) {
+
+            if (array[i]) {
+                resultsArray += array[i];
+            }
+    
+        }
+    } else {
+
+        resultsArray = '<span class="hidden noDetails"></span>'
+    }
 
     return resultsArray;
 }
@@ -398,7 +413,7 @@ try {
         '<span class="icon-list__content">' + officeDict.openingHours.content + '</span>' +
         '</li>' : null;
     let contactArray = (iconTrue) ? [phoneString, emailString, locationString, openingHoursString] : null;
-    let contactString = iconValidator(contactArray);
+    let contactString = iconValidator(contactArray, "contactDetails");
     
 
 
@@ -457,7 +472,7 @@ try {
         '</a>' +
         '</li>' : null;
     let socialArray = (socialTrue) ? [tiktokString, twitterString, youtubeString, linkedinString, instagramString, facebookString, threadsString] : null;
-    let socialString = iconValidator(socialArray);
+    let socialString = iconValidator(socialArray, "socialDetails");
 
 
 
