@@ -68,6 +68,8 @@
               <span class=&quot;icon-list__content&quot;><t4 type=&quot;content&quot; name=&quot;Opening Hours&quot; output=&quot;normal&quot; modifiers=&quot;striptags,htmlentities&quot; /></span>
             </li>" />
           </ul>
+
+          
           <div class="eyebrow" id="connect">Connect</div>
           <ul class="icon-list social-media btn-row" id="social-media-icons">
 

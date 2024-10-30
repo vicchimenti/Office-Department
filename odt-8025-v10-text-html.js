@@ -256,8 +256,8 @@ try {
     let closeCell8 = '</div></div>';
     let openCell4 = '<aside class="cell medium-4">';
     let closeCell4 = '</aside>';
-    let openDetail = '<div class="office-detail--contact">';
-    let closeDetail = '</div>';
+    // let openDetail = '<div class="office-detail--contact">';
+    // let closeDetail = '</div>';
 
 
 
@@ -326,6 +326,9 @@ try {
     let closeSocial = (socialTrue) ?
         '</ul>' :
         '<span class="hidden socialLinks"></span>';
+    let openIconList = (socialTrue || ) ?
+        '<div class="eyebrow" id="connect">Connect</div><ul class="icon-list social-media btn-row" id="social-media-icons">' :
+        '<span class="hidden socialList"></span>';
     
 
 
@@ -425,6 +428,8 @@ try {
             closeCell8,
             openCell4,
             imageString,
+            openIconList,
+
             openDetail,
 
             openSocial,
@@ -436,7 +441,9 @@ try {
             facebookString,
             threadsString,
             closeSocial,
+
             closeDetail,
+
             closeCell4,
             closeGrid
         ]
