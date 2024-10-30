@@ -388,7 +388,7 @@ try {
         '<span class="icon-list__icon fas fa-clock" aria-hidden="true"></span>' +
         '<span class="icon-list__content">' + officeDict.openingHours.content + '</span>' +
         '</li>' : null;
-    let contactArray = [phoneString, emailString, locationString, openingHoursString];
+    let contactArray = (iconTrue) ? [phoneString, emailString, locationString, openingHoursString] : null;
     let contactString = iconValidator(contactArray);
     
 
@@ -445,7 +445,7 @@ try {
         '<span class="fa-brands fa-square-threads" aria-hidden="true"></span>' +
         '</a>' +
         '</li>' : null;
-    let socialArray = [tiktokString, twitterString, youtubeString, linkedinString, instagramString, facebookString, threadsString];
+    let socialArray = (socialTrue) ? [tiktokString, twitterString, youtubeString, linkedinString, instagramString, facebookString, threadsString] : null;
     let socialString = iconValidator(socialArray);
 
 
