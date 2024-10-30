@@ -311,10 +311,10 @@ try {
      * 
      * */
     let iconTrue = (    officeDict.phone.content             ||
-        officeDict.email.content             ||
-        officeDict.location.content          ||
-        officeDict.openingHours.content   )  ?
-        true : false;
+                        officeDict.email.content             ||
+                        officeDict.location.content          ||
+                        officeDict.openingHours.content   )  ?
+                        true : false;
 
 
 
