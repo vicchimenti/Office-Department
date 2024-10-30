@@ -297,9 +297,9 @@ try {
      *  media library image
      * 
      * */
-    let imageString = (officeDict.mediaImage.content) ?
-    mediaTag(officeDict.mediaImage.content) :
-    '<span class="hidden noImage"></span>';
+    let imageString = (officeDict.mediaImage.content && officeDict.mediaImageFull.content) ?
+        mediaTag(officeDict.mediaImage.content, officeDict.mediaImageFull.content) :
+        '<span class="hidden noImage"></span>';
 
 
 
