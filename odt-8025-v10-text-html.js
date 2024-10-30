@@ -7,7 +7,7 @@
  *
  *     Document will write once when the page loads
  *
- *     @version 1.1.14
+ *     @version 1.1.15
  * 
  */
 
@@ -112,10 +112,10 @@ function mediaTag(mediaPath, mediaPathFull) {
  */
 function processQuery(query) {
 
-    let pattern = '/ /gi';
+    let pattern = '/\s/g';
     let replacement = '%20';
     
-    return query.replaceAll(" ", replacement);
+    return query.replaceAll(pattern, replacement);
 }
 
 
