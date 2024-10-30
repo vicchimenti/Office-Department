@@ -472,7 +472,7 @@ try {
      * */
     let imageString = (officeDict.mediaImage.content) ?
         mediaTag(officeDict.mediaImage.content) :
-        externalImageTag(officeDict.externalImage.content, officeDict.externalImageAlt.content, officeDict.contentName.content);
+        '<span class="hidden noImage"></span>';
 
 
 
