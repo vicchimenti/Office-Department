@@ -92,6 +92,10 @@ function mediaTag(mediaPath) {
     let info = new ImageInfo();
     info.setInput(media);
 
+    'srcset="<t4 type=&quot;content&quot; name=&quot;Office/Dept Image&quot; output=&quot;normal&quot; formatter=&quot;v10/image/pxl-crop&quot; cdn=&quot;true&quot; pxl-filter-id=&quot;57&quot; /> 360w,
+                      <t4 type=&quot;content&quot; name=&quot;Office/Dept Image&quot; output=&quot;normal&quot; formatter=&quot;v10/image/pxl-crop&quot; cdn=&quot;true&quot; pxl-filter-id=&quot;58&quot; /> 728w&quot;
+            sizes=&quot;(min-width: 1280px) 360px, (min-width: 780px) 29.17vw, calc(100vw - 40px)&quot;'
+
     let mediaHTML = (info.check()) ?
         '<figure class="aspect-ratio-frame" style="--aspect-ratio: 22/36"><img loading="eager" src="' + mediaPath + '" aria-label="' + mediaInfo.getName() + '" alt="' + mediaInfo.getDescription() + '" width="' + info.getWidth() + '" height="' + info.getHeight() + '" class="js-processed" /></figure>' :
         '<span class="newsroomImageWrapper d-none visually-hidden hidden">Invalid Media ID</span>';
@@ -209,6 +213,7 @@ try {
         schoolsColleges: getContentValues('<t4 type="content" name="Schools & Colleges" output="normal" display_field="value" />'),
         officeType: getContentValues('<t4 type="content" name="Type of Office/Dept" output="normal" display_field="value" />'),
         mediaImage: getContentValues('<t4 type="content" name="Office/Dept Image" output="normal" formatter="v10/image/pxl-crop" cdn="true" pxl-filter-id="57" />'),
+        mediaImageFull: getContentValues('<t4 type="content" name="Office/Dept Image" output="normal" formatter="v10/image/pxl-crop" cdn="true" pxl-filter-id="58" />'),
         phone: getContentValues('<t4 type="content" name="Phone" output="normal" modifiers="striptags,htmlentities" />'),
         email: getContentValues('<t4 type="content" name="Email" output="normal" modifiers="striptags,htmlentities,encode_emails" />'),
         location: getContentValues('<t4 type="content" name="Location" output="normal" modifiers="nl2br" />'),
