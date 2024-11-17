@@ -7,7 +7,7 @@
  *
  *     Document will write once when the page loads
  *
- *     @version 1.2.00
+ *     @version 1.2.01
  * 
  */
 
@@ -486,10 +486,10 @@ try {
      * 
      * */
     let mediaStringApp = (officeDict.cvApplication.content) ?
-        '<a title="'+officeDict.cvApplication.content+'" href="' + officeDict.cvApplication.content + '" target="_blank">' +officeDict.cvApplication.content + '</a>' :
+        '<a title="'+officeDict.officeName.content+'" href="' + officeDict.cvApplication.content + '" target="_blank">' +officeDict.cvApplication.content + '</a>' :
         '<span hidden class="hidden mediaApp"></span>';
     let mediaStringPath = (officeDict.cvPath.content && officeDict.cvLinkText.content) ?
-        '<a title="' + officeDict.cvLinkText.content + '" href="' + officeDict.cvPath.content + '" target="_blank">' + officeDict.officeName.content + '</a>' :
+        '<a title="' + officeDict.officeName.content + '" href="' + officeDict.cvPath.content + '" target="_blank">' + officeDict.officeName.content + '</a>' :
         '<span hidden class="hidden mediaPath"></span>';
 
 
