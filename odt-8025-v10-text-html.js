@@ -486,7 +486,7 @@ try {
      * 
      * */
     let mediaStringApp = (officeDict.cvApplication.content) ?
-        '<a title="" href="" target="_blank">' + + '</a>' :
+        '<a title="'+officeDict.cvApplication.content+'" href="' + officeDict.cvApplication.content + '" target="_blank">' +officeDict.cvApplication.content + '</a>' :
         '<span hidden class="hidden mediaApp"></span>';
 
 
