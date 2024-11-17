@@ -523,7 +523,6 @@ try {
             openSocial,
             socialString,
             closeSocial,
-            mediaStringApp,
             mediaStringPath,
             closeDetail,
             closeCell4,
