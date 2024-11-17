@@ -7,7 +7,7 @@
  *
  *     Document will write once when the page loads
  *
- *     @version 1.2.03
+ *     @version 1.2.04
  * 
  */
 
@@ -485,8 +485,11 @@ try {
      *  Media Download
      * 
      * */
-    let mediaStringPath = (officeDict.cvPath.content && officeDict.cvLinkText.content) ?
-        '<a title="' + officeDict.officeName.content + '" href="' + officeDict.cvPath.content + '" target="_blank">' + officeDict.cvLinkText.content + '</a>' :
+    let mediaStringPath = (officeDict.cvPath.content) ?
+        '<a title="' + officeDict.officeName.content + '" href="' + officeDict.cvPath.content + '" target="_blank">' + officeDict.officeName.content + '</a>' :
+        '<span hidden class="hidden mediaPath"></span>';
+    let mediaStringText = (officeDict.cvLinkText.content) ?
+        '<div ' + officeDict.cvLinkText>content + '>' + officeDict.officeName.content + '</div>' :
         '<span hidden class="hidden mediaPath"></span>';
 
 
@@ -521,6 +524,7 @@ try {
             socialString,
             closeSocial,
             mediaStringPath,
+            mediaStringText,
             closeDetail,
             closeCell4,
             closeGrid
