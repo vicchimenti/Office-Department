@@ -490,7 +490,7 @@ try {
         '<span hidden class="hidden mediaApp"></span>';
     let mediaStringPath = (officeDict.cvPath.content && officeDict.cvLinkText.content) ?
         '<a title="' + officeDict.cvLinkText.content + '" href="' + officeDict.cvPath.content + '" target="_blank">' + officeDict.officeName.content + '</a>' :
-        '<span hidden class="hidden mediaApp"></span>';
+        '<span hidden class="hidden mediaPath"></span>';
 
 
 
