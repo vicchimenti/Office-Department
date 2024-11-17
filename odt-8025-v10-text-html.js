@@ -488,7 +488,9 @@ try {
     let mediaStringApp = (officeDict.cvApplication.content) ?
         '<a title="'+officeDict.cvApplication.content+'" href="' + officeDict.cvApplication.content + '" target="_blank">' +officeDict.cvApplication.content + '</a>' :
         '<span hidden class="hidden mediaApp"></span>';
-
+    let mediaStringPath = (officeDict.cvPath.content && officeDict.cvLinkText.content) ?
+        '<a title="' + officeDict.cvLinkText.content + '" href="' + officeDict.cvPath.content + '" target="_blank">' + officeDict.officeName.content + '</a>' :
+        '<span hidden class="hidden mediaApp"></span>';
 
 
 
@@ -521,6 +523,8 @@ try {
             openSocial,
             socialString,
             closeSocial,
+            mediaStringApp,
+            mediaStringPath,
             closeDetail,
             closeCell4,
             closeGrid
