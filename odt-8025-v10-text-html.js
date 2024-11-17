@@ -481,6 +481,19 @@ try {
 
 
 
+    /***
+     *  Media Download
+     * 
+     * */
+    let mediaStringApp = (officeDict.cvApplication.content) ?
+        '<a title="" href="" target="_blank">' + + '</a>' :
+        '<span hidden class="hidden mediaApp"></span>';
+
+
+
+
+
+
 
 
 
