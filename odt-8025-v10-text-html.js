@@ -253,6 +253,7 @@ try {
         threads: getContentValues('<t4 type="content" name="Threads URL" output="normal" modifiers="striptags,htmlentities" />'),
         cvLinkText: getContentValues('<t4 type="content" name="CV" output="normal" formatter="linktext/*" />'),
         cvPath: getContentValues('<t4 type="content" name="CV" output="normal" formatter="path/*" />'),
+        cvApplication: getContentValues('<t4 type="content" name="CV" output="normal" formatter="application/*" />'),
         anchor: getContentValues('<t4 type="meta" meta="html_anchor" />'),
         contentId: getContentValues('<t4 type="meta" meta="content_id" />')
 
