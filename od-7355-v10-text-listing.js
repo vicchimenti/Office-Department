@@ -232,7 +232,7 @@ try {
     /***
      *      Dictionary of content
      * */
-    let officeDict = {
+    let odListingDict = {
 
         contentName: getContentValues('<t4 type="content" name="Name" output="normal" modifiers="striptags,htmlentities" />'),
         officeName: getContentValues('<t4 type="content" name="Office/Dept Name" output="normal" modifiers="striptags,htmlentities" />'),
@@ -280,9 +280,9 @@ try {
      *  h1 heading
      * 
      * */
-    let headingString = (officeDict.officeName.content) ?
-        '<h1>' + officeDict.officeName.content + '</h1>' :
-        '<h1>' + officeDict.contentName.content + '</h1>';
+    let headingString = (odListingDict.officeName.content) ?
+        '<h1>' + odListingDict.officeName.content + '</h1>' :
+        '<h1>' + odListingDict.contentName.content + '</h1>';
 
 
 
@@ -291,8 +291,8 @@ try {
      *  process types
      * 
      * */
-    let formattedTypes = (officeDict.officeType.content) ?
-        processList(officeDict.officeType.content) :
+    let formattedTypes = (odListingDict.officeType.content) ?
+        processList(odListingDict.officeType.content) :
         '<span class="hidden officeType"></span>';
 
 
@@ -302,8 +302,8 @@ try {
      *  Description
      * 
      * */
-    let descriptionString = (officeDict.description.content) ?
-        '<div class="wysiwyg"><p>' + officeDict.description.content + '</p></div>' :
+    let descriptionString = (odListingDict.description.content) ?
+        '<div class="wysiwyg"><p>' + odListingDict.description.content + '</p></div>' :
         '<span class="hidden generalDescription"></span>';
     
 
@@ -313,10 +313,10 @@ try {
      *  Breadcrumbs
      * 
      * */
-    let breadcrumbString = (!officeDict.breadcrumbOption.content && officeDict.breadcrumbs.content) ?
-        '<div class="global-spacing--3x">' + officeDict.breadcrumbs.content + '</div>' :
-        (officeDict.breadcrumbOption.content && officeDict.breadcrumbs.content) ?
-        '<div class="global-spacing--3x sr-only">' + officeDict.breadcrumbs.content + '</div>' :
+    let breadcrumbString = (!odListingDict.breadcrumbOption.content && odListingDict.breadcrumbs.content) ?
+        '<div class="global-spacing--3x">' + odListingDict.breadcrumbs.content + '</div>' :
+        (odListingDict.breadcrumbOption.content && odListingDict.breadcrumbs.content) ?
+        '<div class="global-spacing--3x sr-only">' + odListingDict.breadcrumbs.content + '</div>' :
         '<span class="hidden nobreadcrumbs"></span>';
 
 
@@ -326,8 +326,8 @@ try {
      *  media library image
      * 
      * */
-    let imageString = (officeDict.mediaImage.content && officeDict.mediaImageFull.content) ?
-        mediaTag(officeDict.mediaImage.content, officeDict.mediaImageFull.content) :
+    let imageString = (odListingDict.mediaImage.content && odListingDict.mediaImageFull.content) ?
+        mediaTag(odListingDict.mediaImage.content, odListingDict.mediaImageFull.content) :
         '<span class="hidden noImage"></span>';
 
 
@@ -337,10 +337,10 @@ try {
      *  Icon list
      * 
      * */
-    let iconTrue = (    officeDict.phone.content             ||
-                        officeDict.email.content             ||
-                        officeDict.location.content          ||
-                        officeDict.openingHours.content   )  ?
+    let iconTrue = (    odListingDict.phone.content             ||
+                        odListingDict.email.content             ||
+                        odListingDict.location.content          ||
+                        odListingDict.openingHours.content   )  ?
                         true : false;
 
 
@@ -350,13 +350,13 @@ try {
      *  Social list
      * 
      * */
-    let socialTrue = (  officeDict.tiktok.content         ||
-                        officeDict.twitter.content        ||
-                        officeDict.youtube.content        ||
-                        officeDict.linkedin.content       || 
-                        officeDict.instagram.content      ||
-                        officeDict.facebook.content       ||
-                        officeDict.threads.content    )   ?
+    let socialTrue = (  odListingDict.tiktok.content         ||
+                        odListingDict.twitter.content        ||
+                        odListingDict.youtube.content        ||
+                        odListingDict.linkedin.content       || 
+                        odListingDict.instagram.content      ||
+                        odListingDict.facebook.content       ||
+                        odListingDict.threads.content    )   ?
                         true : false;
 
 
@@ -392,29 +392,29 @@ try {
      *  Contact links
      * 
      * */
-    let phoneString = (iconTrue && officeDict.phone.content) ?
+    let phoneString = (iconTrue && odListingDict.phone.content) ?
         '<li>' +
         '<span class="icon-list__icon fas fa-phone" aria-hidden="true"></span>' +
         '<span class="icon-list__content">' +
-        '<a href="tel:'+officeDict.phone.content+'">' + officeDict.phone.content + '</a>' +
+        '<a href="tel:'+odListingDict.phone.content+'">' + odListingDict.phone.content + '</a>' +
         '</span>' +
         '</li>' : null;
-    let emailString = (iconTrue && officeDict.email.content) ?
+    let emailString = (iconTrue && odListingDict.email.content) ?
         '<li>' +
         '<span class="icon-list__icon fas fa-envelope" aria-hidden="true"></span>' +
         '<span class="icon-list__content">' +
-        '<a href="mailto:'+officeDict.email.content+'">' + officeDict.email.content + '</a>' +
+        '<a href="mailto:'+odListingDict.email.content+'">' + odListingDict.email.content + '</a>' +
         '</span>' +
         '</li>' : null;
-    let locationString = (iconTrue && officeDict.location.content) ?
+    let locationString = (iconTrue && odListingDict.location.content) ?
         '<li>' +
         '<span class="icon-list__icon fas fa-map-marker-alt" aria-hidden="true"></span>' +
-        '<span class="icon-list__content">' + officeDict.location.content + '</span>' +
+        '<span class="icon-list__content">' + odListingDict.location.content + '</span>' +
         '</li>' : null;
-    let openingHoursString = (iconTrue && officeDict.openingHours.content) ?
+    let openingHoursString = (iconTrue && odListingDict.openingHours.content) ?
         '<li>' +
         '<span class="icon-list__icon fas fa-clock" aria-hidden="true"></span>' +
-        '<span class="icon-list__content">' + officeDict.openingHours.content + '</span>' +
+        '<span class="icon-list__content">' + odListingDict.openingHours.content + '</span>' +
         '</li>' : null;
     let contactArray = (iconTrue) ? [phoneString, emailString, locationString, openingHoursString] : null;
     let contactString = iconValidator(contactArray, "contactDetails");
@@ -426,51 +426,51 @@ try {
      *  Social links
      * 
      * */
-    let tiktokString = (socialTrue && officeDict.tiktok.content) ?
+    let tiktokString = (socialTrue && odListingDict.tiktok.content) ?
         '<li>' +
-        '<a href="' + officeDict.tiktok.content + '" title="TikTok" aria-label="Tiktok opens in a new tab" target="_blank">' +
+        '<a href="' + odListingDict.tiktok.content + '" title="TikTok" aria-label="Tiktok opens in a new tab" target="_blank">' +
         '<span class="show-for-sr">Tiktok</span>' +
         '<span class="fa-brands fa-tiktok" aria-hidden="true"></span>' +
         '</a>' +
         '</li>' : null;
-    let twitterString = (socialTrue && officeDict.twitter.content) ?
+    let twitterString = (socialTrue && odListingDict.twitter.content) ?
         '<li>' +
-        '<a href="' + officeDict.twitter.content + '" title="Twitter X" aria-label="Twitter X opens in a new tab" target="_blank">' +
+        '<a href="' + odListingDict.twitter.content + '" title="Twitter X" aria-label="Twitter X opens in a new tab" target="_blank">' +
         '<span class="show-for-sr">Twitter X</span>' +
         '<span class="fa-brands fa-square-x-twitter" aria-hidden="true"></span>' +
         '</a>' +
         '</li>' : null;
-    let youtubeString = (socialTrue && officeDict.youtube.content) ?
+    let youtubeString = (socialTrue && odListingDict.youtube.content) ?
         '<li>' +
-        '<a href="' + officeDict.youtube.content + '" title="YouTube" aria-label="YouTube opens in a new tab" target="_blank">' +
+        '<a href="' + odListingDict.youtube.content + '" title="YouTube" aria-label="YouTube opens in a new tab" target="_blank">' +
         '<span class="show-for-sr">YouTube</span>' +
         '<span class="fa-brands fa-square-youtube" aria-hidden="true"></span>' +
         '</a>' +
         '</li>' : null;
-    let linkedinString = (socialTrue && officeDict.linkedin.content) ?
+    let linkedinString = (socialTrue && odListingDict.linkedin.content) ?
         '<li>' +
-        '<a href="' + officeDict.linkedin.content + '" title="LinkedIn" aria-label="LinkedIn opens in a new tab" target="_blank">' +
+        '<a href="' + odListingDict.linkedin.content + '" title="LinkedIn" aria-label="LinkedIn opens in a new tab" target="_blank">' +
         '<span class="show-for-sr">LinkedIn</span>' +
         '<span class="fa-brands fa-linkedin" aria-hidden="true"></span>' +
         '</a>' +
         '</li>' : null;
-    let instagramString = (socialTrue && officeDict.instagram.content) ?
+    let instagramString = (socialTrue && odListingDict.instagram.content) ?
         '<li>' +
-        '<a href="' + officeDict.instagram.content + '" title="Instagram" aria-label="Instagram opens in a new tab" target="_blank">' +
+        '<a href="' + odListingDict.instagram.content + '" title="Instagram" aria-label="Instagram opens in a new tab" target="_blank">' +
         '<span class="show-for-sr">Instagram</span>' +
         '<span class="fa-brands fa-square-instagram" aria-hidden="true"></span>' +
         '</a>' +
         '</li>' : null;
-    let facebookString = (socialTrue && officeDict.facebook.content) ?
+    let facebookString = (socialTrue && odListingDict.facebook.content) ?
         '<li>' +
-        '<a href="' + officeDict.facebook.content + '" title="Facebook" aria-label="Facebook opens in a new tab" target="_blank">' +
+        '<a href="' + odListingDict.facebook.content + '" title="Facebook" aria-label="Facebook opens in a new tab" target="_blank">' +
         '<span class="show-for-sr">Facebook</span>' +
         '<span class="fa-brands fa-square-facebook" aria-hidden="true"></span>' +
         '</a>' +
         '</li>' : null;
-    let threadsString = (socialTrue && officeDict.threads.content) ?
+    let threadsString = (socialTrue && odListingDict.threads.content) ?
         '<li>' +
-        '<a href="' + officeDict.threads.content + '" title="Threads" aria-label="Threads opens in a new tab" target="_blank">' +
+        '<a href="' + odListingDict.threads.content + '" title="Threads" aria-label="Threads opens in a new tab" target="_blank">' +
         '<span class="show-for-sr">Threads</span>' +
         '<span class="fa-brands fa-square-threads" aria-hidden="true"></span>' +
         '</a>' +
