@@ -26,7 +26,7 @@
                       <?php if($item['phone']):?>
                         <li>
                           <span class="icon-list__icon fas fa-phone" aria-hidden="true"></span>
-                          <span class="icon-list__content"><a href="tel:<?php echo $item['phone']; ?>"><?php echo $item['phone']; ?></a></span>
+                          <span class="icon-list__content"><a href="tel:<?php echo $item['phone']; ?>" title="Call: <?php echo $item['officeName']; ?>"><?php echo $item['phone']; ?></a></span>
                         </li>
                       <?php endif; ?>
                       <?php if($item['email']):?>
