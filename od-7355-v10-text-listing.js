@@ -276,18 +276,6 @@ try {
 
 
     /***
-     *  declarations
-     * 
-     * */
-
-
-    let openCell4 = '<aside class="cell medium-4">';
-    let closeCell4 = '</aside>';
-
-
-
-
-    /***
      *  h1 heading
      * 
      * */
@@ -509,7 +497,6 @@ try {
             formattedTypes,
             descriptionString,
 
-            openCell4,
             imageString,
             openDetail,
             openIconList,
@@ -519,7 +506,6 @@ try {
             socialString,
             closeSocial,
             closeDetail,
-            closeCell4,
             
             
             
