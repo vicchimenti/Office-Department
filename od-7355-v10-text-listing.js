@@ -486,6 +486,11 @@ try {
      * */
     writeDocument(
         [
+
+            openArticle,
+
+
+            
             openGrid,
             openCell8,
             headingString,
@@ -503,7 +508,10 @@ try {
             closeSocial,
             closeDetail,
             closeCell4,
-            closeGrid
+            closeGrid,
+
+
+            closeArticle
         ]
     );
 
