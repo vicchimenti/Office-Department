@@ -21,34 +21,36 @@
                   <?php endif; ?>
                 </div>
                 <div class="cell medium-3">
-                  <ul class="icon-list">
-                    <?php if($item['phone']):?>
-                      <li>
-                        <span class="icon-list__icon fas fa-phone" aria-hidden="true"></span>
-                        <span class="icon-list__content"><a href="tel:<?php echo $item['phone']; ?>"><?php echo $item['phone']; ?></a></span>
-                      </li>
-                    <?php endif; ?>
-                    <?php if($item['email']):?>
-                      <li>
-                        <span class="icon-list__icon fas fa-envelope" aria-hidden="true"></span>
-                        <span class="icon-list__content">
-                          <a href="mailto:<?php echo $item['email']; ?>"><?php echo $item['email']; ?></a>
-                        </span>
-                      </li>
-                    <?php endif; ?>
-                    <?php if($item['location']): ?>
-                      <li>
-                        <span class="icon-list__icon fas fa-map-marker-alt" aria-hidden="true"></span>
-                        <span class="icon-list__content"><?php echo $item['location']; ?></span>
-                      </li>
-                    <?php endif; ?>
-                    <?php if($item['openingHours']): ?>
-                      <li>
-                        <span class="icon-list__icon fas fa-clock" aria-hidden="true"></span>
-                        <span class="icon-list__content"><?php echo $item['openingHours']; ?></span>
-                      </li>
-                    <?php endif; ?>
-                  </ul>
+                  <?php if($item['phone'] || $item['email'] || $item['location'] || $item['openingHours']): ?>
+                    <ul class="icon-list">
+                      <?php if($item['phone']):?>
+                        <li>
+                          <span class="icon-list__icon fas fa-phone" aria-hidden="true"></span>
+                          <span class="icon-list__content"><a href="tel:<?php echo $item['phone']; ?>"><?php echo $item['phone']; ?></a></span>
+                        </li>
+                      <?php endif; ?>
+                      <?php if($item['email']):?>
+                        <li>
+                          <span class="icon-list__icon fas fa-envelope" aria-hidden="true"></span>
+                          <span class="icon-list__content">
+                            <a href="mailto:<?php echo $item['email']; ?>"><?php echo $item['email']; ?></a>
+                          </span>
+                        </li>
+                      <?php endif; ?>
+                      <?php if($item['location']): ?>
+                        <li>
+                          <span class="icon-list__icon fas fa-map-marker-alt" aria-hidden="true"></span>
+                          <span class="icon-list__content"><?php echo $item['location']; ?></span>
+                        </li>
+                      <?php endif; ?>
+                      <?php if($item['openingHours']): ?>
+                        <li>
+                          <span class="icon-list__icon fas fa-clock" aria-hidden="true"></span>
+                          <span class="icon-list__content"><?php echo $item['openingHours']; ?></span>
+                        </li>
+                      <?php endif; ?>
+                    </ul>
+                  <?php endif; ?>
                 </div>
               </div>
             </div>
