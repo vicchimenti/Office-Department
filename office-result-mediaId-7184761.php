@@ -60,20 +60,17 @@
           <div class="pagination-pages">
             <?php if(isset($paginationArray)): ?>
               <nav aria-label="pagination" class="pagination" data-t4-ajax-link="normal" data-t4-scroll="true">
-                <?php 
-                foreach ($paginationArray as $paginationItem) : 
-                  if ($paginationItem['current']) : ?>
-                    <span class="currentpage" aria-current="page"><?php echo html_entity_decode($paginationItem['text']); ?></span>
-                  <?php else : ?>
-                    <a href="<?php echo $paginationItem['href']; ?>" 
-                      class="<?php echo $paginationItem['class']; ?>" 
-                      title="<?php echo is_numeric($paginationItem['text']) ? 'Page ' . $paginationItem['text'] : html_entity_decode($paginationItem['text']); ?>">
-                      <?php echo html_entity_decode($paginationItem['text']); ?>
-                    </a>
-                  <?php endif;
-                endforeach; ?>
-              </nav>
-            <?php endif; ?>
+                <?php foreach ($paginationArray as $paginationItem) : ?>
+                    <?php if ($paginationItem['current']) : ?>
+                      <span class="currentpage"><a href=""><?php echo $paginationItem['text']; ?></a></span>
+                    <?php else : ?>
+                      <a href="<?php echo $paginationItem['href']; ?>" class="<?php echo $paginationItem['class']; ?>" title="Page <?php echo $paginationItem['class']; ?>">
+                          <?php echo $paginationItem['text']; ?>
+                      </a>
+                    <?php endif; ?>
+                  <?php endforeach; ?>
+                </nav>
+              <?php endif; ?>
           </div>
         </div>
       <?php else : ?>
