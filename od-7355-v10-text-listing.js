@@ -252,7 +252,7 @@ try {
 
 
     /***
-     *  Detail Wrappers
+     *  Icon Wrappers
      * 
      * */
     let openIconList = (iconTrue) ?
