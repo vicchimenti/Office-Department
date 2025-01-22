@@ -159,12 +159,8 @@ function assignList(arrayOfValues) {
 
     for (let i = 0; i < arrayOfValues.length; i++) {
 
-
         let linkItem = String(arrayOfValues[i]).trim();
-        
         listValues += processLinks(linkItem);
-
-
     }
     
     return listValues;
