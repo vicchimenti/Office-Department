@@ -44,6 +44,7 @@ let closeCell3 = '</div>';
 
 
 
+
 /***
  *      Extract values from T4 element tags
  *      and confirm valid existing content item field
@@ -276,12 +277,19 @@ try {
 
 
     /***
-     *  h1 heading
+     *  h3 heading
      * 
      * */
     let headingString = (odListingDict.officeName.content) ?
-        '<h1>' + odListingDict.officeName.content + '</h1>' :
-        '<h1>' + odListingDict.contentName.content + '</h1>';
+        '<h3 class="h4 funderline"><a href="">' + odListingDict.officeName.content + '</a></h3>' :
+        '<h3 class="h4 funderline"><a href="">' + odListingDict.contentName.content + '</a></h3>';
+
+
+
+
+
+
+
 
 
 
@@ -482,6 +490,7 @@ try {
             openArticle,
             openGrid,
             openCell8,
+            headingString,
 
 
 
@@ -493,7 +502,6 @@ try {
             closeCell3,
 
 
-            headingString,
             formattedTypes,
             descriptionString,
 
