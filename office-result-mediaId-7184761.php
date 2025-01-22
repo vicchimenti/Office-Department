@@ -55,27 +55,27 @@
               </div>
             </div>
           </article>
-        <?php endforeach; ?>
-        <div class="pagination-box">
-          <div class="pagination-pages">
-            <?php if(isset($paginationArray)): ?>
-              <nav aria-label="pagination" class="pagination" data-t4-ajax-link="normal" data-t4-scroll="true">
-                <?php foreach ($paginationArray as $paginationItem) : ?>
-                    <?php if ($paginationItem['current']) : ?>
+          <?php endforeach; ?>
+            <div class="pagination-box">
+              <div class="pagination-pages">
+                <?php if(isset($paginationArray)): ?>
+                  <nav aria-label="pagination" class="pagination" data-t4-ajax-link="normal" data-t4-scroll="true">
+                  <?php foreach ($paginationArray as $paginationItem) : ?>
+                      <?php if ($paginationItem['current']) : ?>
                       <span class="currentpage"><a href=""><?php echo $paginationItem['text']; ?></a></span>
-                    <?php else : ?>
-                      <a href="<?php echo $paginationItem['href']; ?>" class="<?php echo $paginationItem['class']; ?>" title="Page <?php echo $paginationItem['class']; ?>">
+                      <?php else : ?>
+                      <a href="<?php echo $paginationItem['href']; ?>" class="<?php echo $paginationItem['class']; ?>">
                           <?php echo $paginationItem['text']; ?>
                       </a>
-                    <?php endif; ?>
+                      <?php endif; ?>
                   <?php endforeach; ?>
-                </nav>
-              <?php endif; ?>
-          </div>
-        </div>
-      <?php else : ?>
-        <p style="text-align: center; padding-top: 30px; font-weight: bold;">No Results Found</p>
-      <?php endif; ?>
+                  </nav>
+                <?php endif; ?>
+              </div>
+            </div>
+        <?php else : ?>
+          <p style="text-align: center; padding-top: 30px; font-weight: bold;">No Results Found</p>
+        <?php endif; ?>
     </section>
   </article>
 </div>
