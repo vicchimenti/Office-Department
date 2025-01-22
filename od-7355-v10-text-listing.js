@@ -498,6 +498,11 @@ try {
 
 
             closeCell8,
+            openCell3,
+
+
+
+            closeCell3,
 
 
             headingString,
