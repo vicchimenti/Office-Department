@@ -1,0 +1,49 @@
+<article class="listing--item department--item global-padding--5x">
+    <div class="grid-container">
+      <div class="grid-x grid-margin-x">
+        <div class="cell medium-8 medium-offset-1 text-margin-reset">
+          <h3 class="h4 funderline"><a href=""><t4 type="content" name="Office/Dept Name" output="normal" modifiers="striptags,htmlentities" /></a></h3>
+          <div class="global-spacing--2x">
+            <p><t4 type="content" name="General Description" output="normal" modifiers="striptags,htmlentities" /></p>
+          </div>
+          <div class="global-spacing--2x tags tags__links">
+            <h4 class="tags__heading show-for-sr">School or College:</h4>
+            <ul>
+              <li><a href=""><t4 type="content" name="Type of Office/Dept" output="normal" display_field="value" /></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="cell medium-3">
+  
+  
+  
+          <ul class="icon-list">
+  
+  
+            <t4 type="content" name="Phone" output="selective-output" process-format="true" format="<li>
+              <span class=&quot;icon-list__icon fas fa-phone&quot; aria-hidden=&quot;true&quot;></span>
+              <span class=&quot;icon-list__content&quot;><a href='tel:<t4 type=&quot;content&quot; name=&quot;Phone&quot; output=&quot;normal&quot; modifiers=&quot;striptags,htmlentities&quot; />'><t4 type=&quot;content&quot; name=&quot;Phone&quot; output=&quot;normal&quot; modifiers=&quot;striptags,htmlentities&quot; /></a></span>
+            </li>" />
+  
+  
+            <t4 type="content" name="Email" output="selective-output" process-format="true" format="<li>
+              <span class=&quot;icon-list__icon fas fa-envelope&quot; aria-hidden=&quot;true&quot;></span>
+              <span class=&quot;icon-list__content&quot;><a
+                  href=&#39;mailto:<t4 type=&quot;content&quot; name=&quot;Email&quot; output=&quot;normal&quot; modifiers=&quot;striptags,htmlentities&quot; />&#39;><t4 type=&quot;content&quot; name=&quot;Email&quot; output=&quot;normal&quot; modifiers=&quot;striptags,htmlentities&quot; /></a></span>
+            </li>" />
+  
+  
+            <t4 type="content" name="Location" output="selective-output" process-format="true" format="<li>
+              <span class=&quot;icon-list__icon fas fa-map-marker-alt&quot; aria-hidden=&quot;true&quot;></span>
+              <span class=&quot;icon-list__content&quot;><t4 type=&quot;content&quot; name=&quot;Location&quot; output=&quot;normal&quot; modifiers=&quot;striptags,htmlentities&quot; /></span>
+            </li>" />
+            
+            <t4 type="content" name="Opening Hours" output="selective-output" process-format="true" format="<li>
+              <span class=&quot;icon-list__icon fas fa-clock&quot; aria-hidden=&quot;true&quot;></span>
+              <span class=&quot;icon-list__content&quot;><t4 type=&quot;content&quot; name=&quot;Opening Hours&quot; output=&quot;normal&quot; modifiers=&quot;striptags,htmlentities&quot; /></span>
+            </li>" />
+          </ul>
+        </div>
+      </div>
+    </div>
+  </article>
