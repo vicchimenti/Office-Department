@@ -482,7 +482,6 @@ try {
             headingString,
             formattedTypes,
             descriptionString,
-            breadcrumbString,
             closeCell8,
             openCell4,
             imageString,
