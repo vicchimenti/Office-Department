@@ -61,36 +61,17 @@
             <?php if(isset($paginationArray)): ?>
               <nav aria-label="pagination" class="pagination" data-t4-ajax-link="normal" data-t4-scroll="true">
                 <?php 
-                // For numbered pagination
                 foreach ($paginationArray as $paginationItem) : 
-                  if(is_numeric($paginationItem['text'])): 
-                    if ($paginationItem['current']) : ?>
-                      <span class="currentpage"><a href=""><?php echo $paginationItem['text']; ?></a></span>
-                    <?php else : ?>
-                      <a href="<?php echo $paginationItem['href']; ?>" class="<?php echo $paginationItem['class']; ?>" title="Page <?php echo $paginationItem['text']; ?>">
-                        <?php echo $paginationItem['text']; ?>
-                      </a>
-                    <?php endif; 
-                  endif;
-                endforeach; 
-
-                // Find Next and Last URLs
-                $currentPage = 0;
-                $lastPage = 0;
-                foreach ($paginationArray as $item) {
-                  if ($item['current']) {
-                    $currentPage = intval($item['text']);
-                  }
-                  if (is_numeric($item['text'])) {
-                    $lastPage = max($lastPage, intval($item['text']));
-                  }
-                }
-
-                // Only show Next if not on last page
-                if ($currentPage < $lastPage): ?>
-                  <a href="<?php echo $paginationArray[$currentPage + 1]['href']; ?>" class="pagination-next" title="Next page">Next</a>
-                  <a href="<?php echo $paginationArray[$lastPage]['href']; ?>" class="pagination-last" title="Last page">Last</a>
-                <?php endif; ?>
+                  if ($paginationItem['current']) : ?>
+                    <span class="currentpage" aria-current="page"><?php echo $paginationItem['text']; ?></span>
+                  <?php else : ?>
+                    <a href="<?php echo $paginationItem['href']; ?>" 
+                      class="<?php echo $paginationItem['class']; ?>" 
+                      title="<?php echo is_numeric($paginationItem['text']) ? 'Page ' . $paginationItem['text'] : $paginationItem['text']; ?>">
+                      <?php echo $paginationItem['text']; ?>
+                    </a>
+                  <?php endif;
+                endforeach; ?>
               </nav>
             <?php endif; ?>
           </div>
