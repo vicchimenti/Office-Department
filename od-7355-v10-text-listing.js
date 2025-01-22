@@ -237,8 +237,8 @@ try {
         contentName: getContentValues('<t4 type="content" name="Name" output="normal" modifiers="striptags,htmlentities" />'),
         officeName: getContentValues('<t4 type="content" name="Office/Dept Name" output="normal" modifiers="striptags,htmlentities" />'),
         description: getContentValues('<t4 type="content" name="General Description" output="normal" modifiers="striptags,htmlentities" />'),
-        breadcrumbOption: getContentValues('<t4 type="content" name="Hide Breadcrumbs" output="normal" display_field="value" />'),
-        breadcrumbs: getContentValues('<t4 type="navigation" name="Breadcrumbs" id="955" />'),
+        // breadcrumbOption: getContentValues('<t4 type="content" name="Hide Breadcrumbs" output="normal" display_field="value" />'),
+        // breadcrumbs: getContentValues('<t4 type="navigation" name="Breadcrumbs" id="955" />'),
         schoolsColleges: getContentValues('<t4 type="content" name="Schools & Colleges" output="normal" display_field="value" />'),
         officeType: getContentValues('<t4 type="content" name="Type of Office/Dept" output="normal" display_field="value" />'),
         mediaImage: getContentValues('<t4 type="content" name="Office/Dept Image" output="normal" formatter="v10/image/pxl-crop" cdn="true" pxl-filter-id="57" />'),
@@ -313,11 +313,11 @@ try {
      *  Breadcrumbs
      * 
      * */
-    let breadcrumbString = (!odListingDict.breadcrumbOption.content && odListingDict.breadcrumbs.content) ?
-        '<div class="global-spacing--3x">' + odListingDict.breadcrumbs.content + '</div>' :
-        (odListingDict.breadcrumbOption.content && odListingDict.breadcrumbs.content) ?
-        '<div class="global-spacing--3x sr-only">' + odListingDict.breadcrumbs.content + '</div>' :
-        '<span class="hidden nobreadcrumbs"></span>';
+    // let breadcrumbString = (!odListingDict.breadcrumbOption.content && odListingDict.breadcrumbs.content) ?
+    //     '<div class="global-spacing--3x">' + odListingDict.breadcrumbs.content + '</div>' :
+    //     (odListingDict.breadcrumbOption.content && odListingDict.breadcrumbs.content) ?
+    //     '<div class="global-spacing--3x sr-only">' + odListingDict.breadcrumbs.content + '</div>' :
+    //     '<span class="hidden nobreadcrumbs"></span>';
 
 
 
