@@ -274,14 +274,14 @@ try {
         '<li>' +
         '<span class="icon-list__icon fas fa-phone" aria-hidden="true"></span>' +
         '<span class="icon-list__content">' +
-        '<a href="tel:'+odListingDict.phone.content+'">' + odListingDict.phone.content + '</a>' +
+        '<a href="tel:' + odListingDict.phone.content + '">' + odListingDict.phone.content + '</a>' +
         '</span>' +
         '</li>' : null;
     let emailString = (iconTrue && odListingDict.email.content) ?
         '<li>' +
         '<span class="icon-list__icon fas fa-envelope" aria-hidden="true"></span>' +
         '<span class="icon-list__content">' +
-        '<a href="mailto:'+odListingDict.email.content+'">' + odListingDict.email.content + '</a>' +
+        '<a href="mailto:' + odListingDict.email.content + '">' + odListingDict.email.content + '</a>' +
         '</span>' +
         '</li>' : null;
     let locationString = (iconTrue && odListingDict.location.content) ?
