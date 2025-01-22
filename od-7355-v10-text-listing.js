@@ -68,62 +68,6 @@ function getContentValues(tag) {
 
 
 /***
- *      Returns a media object
- */
-// function getMediaInfo(mediaID) {
-
-//     let mediaManager = ApplicationContextProvider.getBean(IMediaManager);
-//     let media = mediaManager.get(mediaID, language);
-
-//     return media;
-// }
-
-
-
-
-/***
- *      Returns a media stream object
- */
-// function readMedia(mediaID) {
-
-//     let mediaObj = getMediaInfo(mediaID);
-//     let oMediaStream = mediaObj.getMedia();
-
-//     return oMediaStream;
-// }
-
-
-
-
-/***
- *     Returns a formatted html img tag
- *     for a media library image element
- *     with required attributes
- *
- */
-// function mediaTag(mediaPath, mediaPathFull) {
-
-//     let imageW1 = ' 360w, ';
-//     let imageW2 = ' 728w';
-//     let itemId = content.get('Office/Dept Image').getID();
-//     let mediaInfo = getMediaInfo(itemId);
-//     let media = readMedia(itemId);
-//     let info = new ImageInfo();
-//     info.setInput(media);
-
-//     let mediaHTML = (info.check()) ?
-//         '<figure class="aspect-ratio-frame" style="--aspect-ratio: 22/36">' +
-//         '<img loading="eager" src="' + mediaPath + '" srcset="' + mediaPath + imageW1 + mediaPathFull + imageW2 + '" sizes="(min-width: 1280px) 360px, (min-width: 780px) 29.17vw, calc(100vw - 40px)" aria-label="' + mediaInfo.getName() + '" alt="' + mediaInfo.getDescription() + '" width="' + info.getWidth() + '" height="' + info.getHeight() + '" class="js-processed" />' +
-//         '</figure>' :
-//         '<span class="hidden invalidMediaId"></span>';
-
-//     return mediaHTML;
-// }
-
-
-
-
-/***
  *      Create Query
  */
 function processQuery(query) {
@@ -249,8 +193,6 @@ try {
         description: getContentValues('<t4 type="content" name="General Description" output="normal" modifiers="striptags,htmlentities" />'),
         schoolsColleges: getContentValues('<t4 type="content" name="Schools & Colleges" output="normal" display_field="value" />'),
         officeType: getContentValues('<t4 type="content" name="Type of Office/Dept" output="normal" display_field="value" />'),
-        // mediaImage: getContentValues('<t4 type="content" name="Office/Dept Image" output="normal" formatter="v10/image/pxl-crop" cdn="true" pxl-filter-id="57" />'),
-        // mediaImageFull: getContentValues('<t4 type="content" name="Office/Dept Image" output="normal" formatter="v10/image/pxl-crop" cdn="true" pxl-filter-id="58" />'),
         phone: getContentValues('<t4 type="content" name="Phone" output="normal" modifiers="striptags,htmlentities" />'),
         email: getContentValues('<t4 type="content" name="Email" output="normal" modifiers="striptags,htmlentities,encode_emails" />'),
         location: getContentValues('<t4 type="content" name="Location" output="normal" modifiers="nl2br" />'),
@@ -299,23 +241,6 @@ try {
     let formattedTypes = (odListingDict.officeType.content) ?
         processList(odListingDict.officeType.content) :
         '<span class="hidden officeType"></span>';
-
-
-
-
-
-    
-
-
-
-
-    /***
-     *  media library image
-     * 
-     * */
-    // let imageString = (odListingDict.mediaImage.content && odListingDict.mediaImageFull.content) ?
-    //     mediaTag(odListingDict.mediaImage.content, odListingDict.mediaImageFull.content) :
-    //     '<span class="hidden noImage"></span>';
 
 
 
