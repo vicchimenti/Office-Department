@@ -35,6 +35,8 @@ importClass(com.terminalfour.media.utils.ImageInfo);
  * */
 let openArticle = '<article class="listing--item department--item global-padding--5x">';
 let closeArticle = '</article>';
+let openGrid = '<div class="grid-container"><div class="grid-x grid-margin-x">';
+let closeGrid = '</div></div>';
 
 
 
@@ -273,8 +275,7 @@ try {
      *  declarations
      * 
      * */
-    let openGrid = '<div class="hero--basic global-padding--15x"><div class="grid-container"><div class="grid-x grid-margin-x">';
-    let closeGrid = '</div></div></div>';
+
     let openCell8 = '<div class="cell medium-8"><div class="hero--basic__text hero--profile__text text-margin-reset">';
     let closeCell8 = '</div></div>';
     let openCell4 = '<aside class="cell medium-4">';
@@ -488,10 +489,10 @@ try {
         [
 
             openArticle,
-
-
-            
             openGrid,
+
+
+
             openCell8,
             headingString,
             formattedTypes,
@@ -508,9 +509,10 @@ try {
             closeSocial,
             closeDetail,
             closeCell4,
+            
+            
+            
             closeGrid,
-
-
             closeArticle
         ]
     );
