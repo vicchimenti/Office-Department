@@ -64,7 +64,7 @@
                 <?php if ($paginationItem['current']) : ?>
                 <span class="currentpage"><a href=""><?php echo $paginationItem['text']; ?></a></span>
                 <?php else : ?>
-                <a href="<?php echo $paginationItem['href']; ?>" class="<?php echo $paginationItem['class']; ?>">
+                <a href="<?php echo $paginationItem['href']; ?>" class="<?php echo $paginationItem['class']; ?>" title="Page <?php echo $paginationItem['text']; ?>">
                     <?php echo $paginationItem['text']; ?>
                 </a>
                 <?php endif; ?>
