@@ -313,9 +313,9 @@ try {
      *  media library image
      * 
      * */
-    let imageString = (odListingDict.mediaImage.content && odListingDict.mediaImageFull.content) ?
-        mediaTag(odListingDict.mediaImage.content, odListingDict.mediaImageFull.content) :
-        '<span class="hidden noImage"></span>';
+    // let imageString = (odListingDict.mediaImage.content && odListingDict.mediaImageFull.content) ?
+    //     mediaTag(odListingDict.mediaImage.content, odListingDict.mediaImageFull.content) :
+    //     '<span class="hidden noImage"></span>';
 
 
 
@@ -494,7 +494,6 @@ try {
 
 
 
-            imageString,
             openDetail,
             openIconList,
             contactString,
