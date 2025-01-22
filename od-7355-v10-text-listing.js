@@ -7,7 +7,7 @@
  *
  *     Document will write once when the page loads
  *
- *     @version 2.0.1
+ *     @version 2.0.2
  * 
  */
 
@@ -144,7 +144,7 @@ function processQuery(query) {
 function processLinks(linkTag) {
 
     let queryItem = processQuery(linkTag);
-    
+
     return '<li><a href="/office-directory/?typeOfOffice=' + queryItem + '" data-t4-ajax-link="true" title="' + linkTag + '">' + linkTag + '</a></li>';
 }
 
