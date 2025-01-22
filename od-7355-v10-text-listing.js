@@ -264,15 +264,7 @@ try {
     let openIconList = (iconTrue) ?
         '<div class="eyebrow" id="office-title">Contact Information</div><ul class="icon-list" id="office-list">' :
         '<span class="hidden contactList"></span>';
-    // let closeIconList = (iconTrue) ?
-    //     '</ul>' :
-    //     '<span class="hidden contactListClosure"></span>';                      
-    // let openSocial = (socialTrue) ?
-    //     '<div class="eyebrow" id="connect">Connect</div><ul class="icon-list social-media btn-row" id="social-media-icons">' :
-    //     '<span class="hidden socialList"></span>';
-    // let closeSocial = (socialTrue) ?
-    //     '</ul>' :
-    //     '<span class="hidden socialLinksClosure"></span>';
+
 
 
 
