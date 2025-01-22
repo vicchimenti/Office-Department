@@ -294,15 +294,8 @@ try {
     let descriptionString = (odListingDict.description.content) ?
     '<div class="global-spacing--2x"><p>' + odListingDict.description.content + '</p></div>' :
     '<span class="hidden generalDescription"></span>';
-
-
-
-
-
-        
+       
             
-
-
 
 
     /***
@@ -315,8 +308,7 @@ try {
 
 
 
-        <div class="global-spacing--2x tags tags__links">
-            <h4 class="tags__heading show-for-sr">School or College:</h4>
+
 
     
 
@@ -498,9 +490,7 @@ try {
             openCell8,
             headingString,
             descriptionString,
-
-
-
+            formattedTypes,
             closeCell8,
             openCell3,
 
@@ -509,7 +499,6 @@ try {
             closeCell3,
 
 
-            formattedTypes,
 
             imageString,
             openDetail,
