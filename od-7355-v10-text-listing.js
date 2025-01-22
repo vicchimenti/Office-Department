@@ -107,7 +107,6 @@ function assignList(arrayOfValues) {
         let linkItem = String(arrayOfValues[i]).trim();
         listValues += processLinks(linkItem);
     }
-    
     return listValues;
 }
 
@@ -136,7 +135,6 @@ function processList(rawValues) {
 function iconValidator(array, tag) {
     
     let resultsArray = "";
-
     if (array) {
 
         for (let i = 0; i < array.length; i++) {
@@ -144,13 +142,11 @@ function iconValidator(array, tag) {
             if (array[i]) {
                 resultsArray += array[i];
             }
-    
         }
     } else {
 
         resultsArray = '<span hidden class="hidden ' + tag + '"></span>'
     }
-
     return resultsArray;
 }
 
@@ -163,7 +159,6 @@ function iconValidator(array, tag) {
 function writeDocument(array) {
 
     for (let i = 0; i < array.length; i++) {
-
         document.write(array[i]);
     }
 }
@@ -261,7 +256,6 @@ try {
     let closeIconList = (iconTrue) ?
         '</ul>' :
         '<span hidden class="hidden contactListIcons"></span>';
-
 
 
 
