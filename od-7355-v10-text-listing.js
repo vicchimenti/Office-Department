@@ -186,8 +186,11 @@ function processList(rawValues) {
     let listItems = assignList(arrayOfTags) || null;
 
     let result = (listItems) ?
-        '<div class="tags tags__links"><h2 class="tags__heading show-for-sr">Profile Type:</h2><ul>' + listItems + '</ul></h2></div>':
+        '<div class="global-spacing--2x tags tags__links"><h4 class="tags__heading show-for-sr">School or College:</h4><ul>' + listItems + '</ul></div>':
         '<span class="hidden officeTypeList"></span>';
+
+        
+            
 
     return result;
 }
@@ -315,7 +318,8 @@ try {
 
 
 
-
+        <div class="global-spacing--2x tags tags__links">
+            <h4 class="tags__heading show-for-sr">School or College:</h4>
 
     
 
