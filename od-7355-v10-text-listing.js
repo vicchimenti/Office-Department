@@ -319,24 +319,13 @@ try {
             formattedTypes,
             closeCell8,
             openCell3,
-
-
-
-            closeCell3,
-
-
-
-
             openIconList,
             contactString,
             closeIconList,
-
-
-            
-            
-            
+            closeCell3,         
             closeGrid,
             closeArticle
+            
         ]
     );
 
