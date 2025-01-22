@@ -56,23 +56,47 @@
             </div>
           </article>
         <?php endforeach; ?>
-        <div class="pagination-box">
+      <?php endif; ?>
+
+      <div class="pagination-box">
         <div class="pagination-pages">
           <?php if(isset($paginationArray)): ?>
             <nav aria-label="pagination" class="pagination" data-t4-ajax-link="normal" data-t4-scroll="true">
-            <?php foreach ($paginationArray as $paginationItem) : ?>
-                <?php if ($paginationItem['current']) : ?>
-                <span class="currentpage"><a href=""><?php echo $paginationItem['text']; ?></a></span>
-                <?php else : ?>
-                <a href="<?php echo $paginationItem['href']; ?>" class="<?php echo $paginationItem['class']; ?>" title="Page <?php echo $paginationItem['text']; ?>">
-                    <?php echo $paginationItem['text']; ?>
-                </a>
-                <?php endif; ?>
-            <?php endforeach; ?>
+              <?php 
+              // For numbered pagination
+              foreach ($paginationArray as $paginationItem) : 
+                if(is_numeric($paginationItem['text'])): 
+                  if ($paginationItem['current']) : ?>
+                    <span class="currentpage"><a href=""><?php echo $paginationItem['text']; ?></a></span>
+                  <?php else : ?>
+                    <a href="<?php echo $paginationItem['href']; ?>" class="<?php echo $paginationItem['class']; ?>" title="Page <?php echo $paginationItem['text']; ?>">
+                      <?php echo $paginationItem['text']; ?>
+                    </a>
+                  <?php endif; 
+                endif;
+              endforeach; 
+
+              // Find Next and Last URLs
+              $currentPage = 0;
+              $lastPage = 0;
+              foreach ($paginationArray as $item) {
+                if ($item['current']) {
+                  $currentPage = intval($item['text']);
+                }
+                if (is_numeric($item['text'])) {
+                  $lastPage = max($lastPage, intval($item['text']));
+                }
+              }
+
+              // Only show Next if not on last page
+              if ($currentPage < $lastPage): ?>
+                <a href="<?php echo $paginationArray[$currentPage + 1]['href']; ?>" class="pagination-next" title="Next page">Next</a>
+                <a href="<?php echo $paginationArray[$lastPage]['href']; ?>" class="pagination-last" title="Last page">Last</a>
+              <?php endif; ?>
             </nav>
           <?php endif; ?>
         </div>
-        </div>
+      </div>
       <?php else : ?>
         <p style="text-align: center; padding-top: 30px; font-weight: bold;">No Results Found</p>
       <?php endif; ?>
