@@ -7,7 +7,7 @@
             <div class="grid-container">
               <div class="grid-x grid-margin-x">
                 <div class="cell medium-8 medium-offset-1 text-margin-reset">
-                  <h3 class="h4 funderline"><a href="<?php echo $item['url']; ?>"><?php echo $item['officeName']; ?></a></h3>
+                  <h3 class="h4 funderline"><a href="<?php echo $item['url']; ?>" title="Visit <?php echo $item['officeName']; ?>"><?php echo $item['officeName']; ?></a></h3>
                   <div class="global-spacing--2x">
                     <p><?php echo $item['generalDescription']; ?></p>
                   </div>
@@ -33,7 +33,7 @@
                         <li>
                           <span class="icon-list__icon fas fa-envelope" aria-hidden="true"></span>
                           <span class="icon-list__content">
-                            <a href="mailto:<?php echo $item['email']; ?>"><?php echo $item['email']; ?></a>
+                            <a href="mailto:<?php echo $item['email']; ?>" title="Email: <?php echo $item['officeName']; ?>"><?php echo $item['email']; ?></a>
                           </span>
                         </li>
                       <?php endif; ?>
