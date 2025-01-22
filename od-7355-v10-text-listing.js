@@ -39,6 +39,8 @@ let openGrid = '<div class="grid-container"><div class="grid-x grid-margin-x">';
 let closeGrid = '</div></div>';
 let openCell8 = '<div class="cell medium-8 medium-offset-1 text-margin-reset">';
 let closeCell8 = '</div>';
+let openCell3 = '<div class="cell medium-3">';
+let closeCell3 = '</div>';
 
 
 
@@ -494,7 +496,7 @@ try {
             openCell8,
 
 
-            
+
             closeCell8,
 
 
