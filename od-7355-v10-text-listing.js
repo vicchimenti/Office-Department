@@ -287,9 +287,20 @@ try {
 
 
 
+    /***
+     *  Description
+     * 
+     * */
+    let descriptionString = (odListingDict.description.content) ?
+    '<div class="global-spacing--2x"><p>' + odListingDict.description.content + '</p></div>' :
+    '<span class="hidden generalDescription"></span>';
 
 
 
+
+
+        
+            
 
 
 
@@ -305,13 +316,7 @@ try {
 
 
 
-    /***
-     *  Description
-     * 
-     * */
-    let descriptionString = (odListingDict.description.content) ?
-        '<div class="wysiwyg"><p>' + odListingDict.description.content + '</p></div>' :
-        '<span class="hidden generalDescription"></span>';
+
     
 
 
@@ -491,6 +496,7 @@ try {
             openGrid,
             openCell8,
             headingString,
+            descriptionString,
 
 
 
@@ -503,7 +509,6 @@ try {
 
 
             formattedTypes,
-            descriptionString,
 
             imageString,
             openDetail,
