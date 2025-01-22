@@ -259,22 +259,6 @@ try {
 
 
     /***
-     *  Social list
-     * 
-     * */
-    // let socialTrue = (  odListingDict.tiktok.content         ||
-    //                     odListingDict.twitter.content        ||
-    //                     odListingDict.youtube.content        ||
-    //                     odListingDict.linkedin.content       || 
-    //                     odListingDict.instagram.content      ||
-    //                     odListingDict.facebook.content       ||
-    //                     odListingDict.threads.content    )   ?
-    //                     true : false;
-
-
-
-
-    /***
      *  Detail Wrappers
      * 
      * */
@@ -331,65 +315,6 @@ try {
     let contactArray = (iconTrue) ? [phoneString, emailString, locationString, openingHoursString] : null;
     let contactString = iconValidator(contactArray, "contactDetails");
     
-
-
-
-    /***
-     *  Social links
-     * 
-     * */
-    // let tiktokString = (socialTrue && odListingDict.tiktok.content) ?
-    //     '<li>' +
-    //     '<a href="' + odListingDict.tiktok.content + '" title="TikTok" aria-label="Tiktok opens in a new tab" target="_blank">' +
-    //     '<span class="show-for-sr">Tiktok</span>' +
-    //     '<span class="fa-brands fa-tiktok" aria-hidden="true"></span>' +
-    //     '</a>' +
-    //     '</li>' : null;
-    // let twitterString = (socialTrue && odListingDict.twitter.content) ?
-    //     '<li>' +
-    //     '<a href="' + odListingDict.twitter.content + '" title="Twitter X" aria-label="Twitter X opens in a new tab" target="_blank">' +
-    //     '<span class="show-for-sr">Twitter X</span>' +
-    //     '<span class="fa-brands fa-square-x-twitter" aria-hidden="true"></span>' +
-    //     '</a>' +
-    //     '</li>' : null;
-    // let youtubeString = (socialTrue && odListingDict.youtube.content) ?
-    //     '<li>' +
-    //     '<a href="' + odListingDict.youtube.content + '" title="YouTube" aria-label="YouTube opens in a new tab" target="_blank">' +
-    //     '<span class="show-for-sr">YouTube</span>' +
-    //     '<span class="fa-brands fa-square-youtube" aria-hidden="true"></span>' +
-    //     '</a>' +
-    //     '</li>' : null;
-    // let linkedinString = (socialTrue && odListingDict.linkedin.content) ?
-    //     '<li>' +
-    //     '<a href="' + odListingDict.linkedin.content + '" title="LinkedIn" aria-label="LinkedIn opens in a new tab" target="_blank">' +
-    //     '<span class="show-for-sr">LinkedIn</span>' +
-    //     '<span class="fa-brands fa-linkedin" aria-hidden="true"></span>' +
-    //     '</a>' +
-    //     '</li>' : null;
-    // let instagramString = (socialTrue && odListingDict.instagram.content) ?
-    //     '<li>' +
-    //     '<a href="' + odListingDict.instagram.content + '" title="Instagram" aria-label="Instagram opens in a new tab" target="_blank">' +
-    //     '<span class="show-for-sr">Instagram</span>' +
-    //     '<span class="fa-brands fa-square-instagram" aria-hidden="true"></span>' +
-    //     '</a>' +
-    //     '</li>' : null;
-    // let facebookString = (socialTrue && odListingDict.facebook.content) ?
-    //     '<li>' +
-    //     '<a href="' + odListingDict.facebook.content + '" title="Facebook" aria-label="Facebook opens in a new tab" target="_blank">' +
-    //     '<span class="show-for-sr">Facebook</span>' +
-    //     '<span class="fa-brands fa-square-facebook" aria-hidden="true"></span>' +
-    //     '</a>' +
-    //     '</li>' : null;
-    // let threadsString = (socialTrue && odListingDict.threads.content) ?
-    //     '<li>' +
-    //     '<a href="' + odListingDict.threads.content + '" title="Threads" aria-label="Threads opens in a new tab" target="_blank">' +
-    //     '<span class="show-for-sr">Threads</span>' +
-    //     '<span class="fa-brands fa-square-threads" aria-hidden="true"></span>' +
-    //     '</a>' +
-    //     '</li>' : null;
-    // let socialArray = (socialTrue) ? [tiktokString, twitterString, youtubeString, linkedinString, instagramString, facebookString, threadsString] : null;
-    // let socialString = iconValidator(socialArray, "socialDetails");
-
 
 
 
