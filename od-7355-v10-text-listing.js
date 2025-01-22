@@ -37,6 +37,8 @@ let openArticle = '<article class="listing--item department--item global-padding
 let closeArticle = '</article>';
 let openGrid = '<div class="grid-container"><div class="grid-x grid-margin-x">';
 let closeGrid = '</div></div>';
+let openCell8 = '<div class="cell medium-8 medium-offset-1 text-margin-reset">';
+let closeCell8 = '</div>';
 
 
 
@@ -276,8 +278,7 @@ try {
      * 
      * */
 
-    let openCell8 = '<div class="cell medium-8"><div class="hero--basic__text hero--profile__text text-margin-reset">';
-    let closeCell8 = '</div></div>';
+
     let openCell4 = '<aside class="cell medium-4">';
     let closeCell4 = '</aside>';
 
