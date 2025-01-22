@@ -70,13 +70,13 @@ function getContentValues(tag) {
 /***
  *      Returns a media object
  */
-function getMediaInfo(mediaID) {
+// function getMediaInfo(mediaID) {
 
-    let mediaManager = ApplicationContextProvider.getBean(IMediaManager);
-    let media = mediaManager.get(mediaID, language);
+//     let mediaManager = ApplicationContextProvider.getBean(IMediaManager);
+//     let media = mediaManager.get(mediaID, language);
 
-    return media;
-}
+//     return media;
+// }
 
 
 
@@ -84,13 +84,13 @@ function getMediaInfo(mediaID) {
 /***
  *      Returns a media stream object
  */
-function readMedia(mediaID) {
+// function readMedia(mediaID) {
 
-    let mediaObj = getMediaInfo(mediaID);
-    let oMediaStream = mediaObj.getMedia();
+//     let mediaObj = getMediaInfo(mediaID);
+//     let oMediaStream = mediaObj.getMedia();
 
-    return oMediaStream;
-}
+//     return oMediaStream;
+// }
 
 
 
@@ -101,24 +101,24 @@ function readMedia(mediaID) {
  *     with required attributes
  *
  */
-function mediaTag(mediaPath, mediaPathFull) {
+// function mediaTag(mediaPath, mediaPathFull) {
 
-    let imageW1 = ' 360w, ';
-    let imageW2 = ' 728w';
-    let itemId = content.get('Office/Dept Image').getID();
-    let mediaInfo = getMediaInfo(itemId);
-    let media = readMedia(itemId);
-    let info = new ImageInfo();
-    info.setInput(media);
+//     let imageW1 = ' 360w, ';
+//     let imageW2 = ' 728w';
+//     let itemId = content.get('Office/Dept Image').getID();
+//     let mediaInfo = getMediaInfo(itemId);
+//     let media = readMedia(itemId);
+//     let info = new ImageInfo();
+//     info.setInput(media);
 
-    let mediaHTML = (info.check()) ?
-        '<figure class="aspect-ratio-frame" style="--aspect-ratio: 22/36">' +
-        '<img loading="eager" src="' + mediaPath + '" srcset="' + mediaPath + imageW1 + mediaPathFull + imageW2 + '" sizes="(min-width: 1280px) 360px, (min-width: 780px) 29.17vw, calc(100vw - 40px)" aria-label="' + mediaInfo.getName() + '" alt="' + mediaInfo.getDescription() + '" width="' + info.getWidth() + '" height="' + info.getHeight() + '" class="js-processed" />' +
-        '</figure>' :
-        '<span class="hidden invalidMediaId"></span>';
+//     let mediaHTML = (info.check()) ?
+//         '<figure class="aspect-ratio-frame" style="--aspect-ratio: 22/36">' +
+//         '<img loading="eager" src="' + mediaPath + '" srcset="' + mediaPath + imageW1 + mediaPathFull + imageW2 + '" sizes="(min-width: 1280px) 360px, (min-width: 780px) 29.17vw, calc(100vw - 40px)" aria-label="' + mediaInfo.getName() + '" alt="' + mediaInfo.getDescription() + '" width="' + info.getWidth() + '" height="' + info.getHeight() + '" class="js-processed" />' +
+//         '</figure>' :
+//         '<span class="hidden invalidMediaId"></span>';
 
-    return mediaHTML;
-}
+//     return mediaHTML;
+// }
 
 
 
