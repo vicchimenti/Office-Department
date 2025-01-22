@@ -189,9 +189,6 @@ function processList(rawValues) {
         '<div class="global-spacing--2x tags tags__links"><h4 class="tags__heading show-for-sr">School or College:</h4><ul>' + listItems + '</ul></div>':
         '<span class="hidden officeTypeList"></span>';
 
-        
-            
-
     return result;
 }
 
