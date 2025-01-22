@@ -30,6 +30,15 @@ importClass(com.terminalfour.media.utils.ImageInfo);
 
 
 /***
+ *  declarations
+ * 
+ * */
+let openArticle = '<article class="listing--item department--item global-padding--5x">';
+let closeArticle = '</article>';
+
+
+
+/***
  *      Extract values from T4 element tags
  *      and confirm valid existing content item field
  */
