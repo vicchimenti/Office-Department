@@ -127,14 +127,14 @@ function mediaTag(mediaPath, mediaPathFull) {
 /***
  *      Create Query
  */
-function processQuery(query) {
+// function processQuery(query) {
 
-    let regex = /\s/g;
-    let replacement = "%20";
+//     let regex = /\s/g;
+//     let replacement = "%20";
 
     
-    return query.replace(regex, replacement);
-}
+//     return query.replace(regex, replacement);
+// }
 
 
 
