@@ -125,7 +125,7 @@ function processList(rawValues) {
 
     let result = (listItems) ?
         '<div class="global-spacing--2x tags tags__links"><h4 class="tags__heading show-for-sr">School or College:</h4><ul>' + listItems + '</ul></div>':
-        '<span class="hidden officeTypeList"></span>';
+        '<span hidden class="hidden officeTypeList"></span>';
 
     return result;
 }
@@ -148,7 +148,7 @@ function iconValidator(array, tag) {
         }
     } else {
 
-        resultsArray = '<span class="hidden ' + tag + '"></span>'
+        resultsArray = '<span hidden class="hidden ' + tag + '"></span>'
     }
 
     return resultsArray;
@@ -222,7 +222,7 @@ try {
      * */
     let descriptionString = (odListingDict.description.content) ?
     '<div class="global-spacing--2x"><p>' + odListingDict.description.content + '</p></div>' :
-    '<span class="hidden generalDescription"></span>';
+    '<span hidden class="hidden generalDescription"></span>';
        
             
 
@@ -233,7 +233,7 @@ try {
      * */
     let formattedTypes = (odListingDict.officeType.content) ?
         processList(odListingDict.officeType.content) :
-        '<span class="hidden officeType"></span>';
+        '<span hidden class="hidden officeType"></span>';
 
 
 
@@ -256,8 +256,11 @@ try {
      * 
      * */
     let openIconList = (iconTrue) ?
-        '<div class="eyebrow" id="office-title">Contact Information</div><ul class="icon-list" id="office-list">' :
-        '<span class="hidden contactList"></span>';
+        '<ul class="icon-list">' :
+        '<span hidden class="hidden contactList"></span>';
+    let closeIconList = (iconTrue) ?
+        '</ul>' :
+        '<span hidden class="hidden contactListIcons"></span>';
 
 
 
@@ -292,7 +295,7 @@ try {
         '<span class="icon-list__content">' + odListingDict.openingHours.content + '</span>' +
         '</li>' : null;
     let contactArray = (iconTrue) ? [phoneString, emailString, locationString, openingHoursString] : null;
-    let contactString = iconValidator(contactArray, "contactDetails");
+    let contactString = (contactArray) ? iconValidator(contactArray, "contactDetails") : '<span hidden class="hidden contacts"></span>';
     
 
 
@@ -326,6 +329,7 @@ try {
 
             openIconList,
             contactString,
+            closeIconList,
 
 
             
