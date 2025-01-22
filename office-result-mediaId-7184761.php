@@ -63,12 +63,12 @@
                 <?php 
                 foreach ($paginationArray as $paginationItem) : 
                   if ($paginationItem['current']) : ?>
-                    <span class="currentpage" aria-current="page"><?php echo $paginationItem['text']; ?></span>
+                    <span class="currentpage" aria-current="page"><?php echo html_entity_decode($paginationItem['text']); ?></span>
                   <?php else : ?>
                     <a href="<?php echo $paginationItem['href']; ?>" 
                       class="<?php echo $paginationItem['class']; ?>" 
-                      title="<?php echo is_numeric($paginationItem['text']) ? 'Page ' . $paginationItem['text'] : $paginationItem['text']; ?>">
-                      <?php echo $paginationItem['text']; ?>
+                      title="<?php echo is_numeric($paginationItem['text']) ? 'Page ' . $paginationItem['text'] : html_entity_decode($paginationItem['text']); ?>">
+                      <?php echo html_entity_decode($paginationItem['text']); ?>
                     </a>
                   <?php endif;
                 endforeach; ?>
