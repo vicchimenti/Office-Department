@@ -258,8 +258,8 @@ try {
      * 
      * */
     let headingString = (odListingDict.officeName.content) ?
-        '<h3 class="h4 funderline"><a href="">' + odListingDict.officeName.content + '</a></h3>' :
-        '<h3 class="h4 funderline"><a href="">' + odListingDict.contentName.content + '</a></h3>';
+        '<h3 class="h4 funderline"><a href="" title="' + odListingDict.officeName.content + '">' + odListingDict.officeName.content + '</a></h3>' :
+        '<h3 class="h4 funderline"><a href="" title="' + odListingDict.contentName.content + '">' + odListingDict.contentName.content + '</a></h3>';
 
 
 
