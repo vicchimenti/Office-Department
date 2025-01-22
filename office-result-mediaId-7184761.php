@@ -11,12 +11,14 @@
                   <div class="global-spacing--2x">
                     <p><?php echo $item['generalDescription']; ?></p>
                   </div>
-                  <div class="global-spacing--2x tags tags__links">
-                    <h4 class="tags__heading show-for-sr">School or College:</h4>
-                    <ul>
-                      <?php tags_list($item['schoolsColleges'], $office_department_link, 'schoolsColleges', '|'); ?>
-                    </ul>
-                  </div>
+                  <?php if (!empty($item['schoolsColleges'])): ?>
+                    <div class="global-spacing--2x tags tags__links">
+                      <h4 class="tags__heading show-for-sr">School or College:</h4>
+                      <ul>
+                        <?php tags_list($item['schoolsColleges'], $office_department_link, 'schoolsColleges', '|'); ?>
+                      </ul>
+                    </div>
+                  <?php endif; ?>
                 </div>
                 <div class="cell medium-3">
                   <ul class="icon-list">
