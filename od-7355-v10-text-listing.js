@@ -491,14 +491,17 @@ try {
 
             openArticle,
             openGrid,
-
-
-
             openCell8,
+
+
+            
+            closeCell8,
+
+
             headingString,
             formattedTypes,
             descriptionString,
-            closeCell8,
+
             openCell4,
             imageString,
             openDetail,
